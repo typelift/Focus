@@ -8,6 +8,7 @@
 
 /// Captures an isomorphism between S and A.
 public struct Iso<S, T, A, B> {
+    ///
 	public let get : S -> A
 	public let inject : B -> T
 
@@ -17,7 +18,7 @@ public struct Iso<S, T, A, B> {
 		self.inject = inject
 	}
 
-	/// Runs a value S along both parts of the Iso.
+	/// Runs a value of type `S` along both parts of the Iso.
 	public func modify(v : S, _ f : A -> B) -> T {
 		return inject(f(get(v)))
 	}
