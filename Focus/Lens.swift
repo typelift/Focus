@@ -79,6 +79,15 @@ public struct Lens<S, T, A, B> {
             return IxStore((q1.pos, q2.pos)) { (l, r) in (q1.peek(l), q2.peek(r)) }
         }
     }
+    
+    /// Creates a Lens that sends its input structure to both Lenses to focus on distinct subparts.
+    public func fanout<A_, T_>(right : Lens<S, T_, A_, B>) -> Lens<S, (T, T_), (A, A_), B> {
+        return Lens<S, (T, T_), (A, A_), B> { s in
+            let q1 = self.run(s)
+            let q2 = right.run(s)
+            return IxStore((q1.pos, q2.pos)) { (q1.peek($0), q2.peek($0)) }
+        }
+    }
 }
 
 public func • <S, T, I, J, A, B>(l1 : Lens<S, T, I, J>, l2 : Lens<I, J, A, B>) -> Lens<S, T, A, B> {
