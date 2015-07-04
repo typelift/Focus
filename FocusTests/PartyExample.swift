@@ -19,11 +19,11 @@ class Party {
 	}
 
 	class func lpartyHost() -> Lens<Party, Party, User, User> {
-		let getter = { (party: Party) -> User in
+		let getter = { (party : Party) -> User in
 			party.host
 		}
 
-		let setter = { (party: Party, host: User) -> Party in
+		let setter = { (party : Party, host : User) -> Party in
 			Party(h: host)
 		}
 

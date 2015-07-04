@@ -132,13 +132,13 @@
 			children = (
 				824B46411B460BE2009AAF49 /* ArrayZipper.swift */,
 				824B46471B460C1E009AAF49 /* LensOperators.swift */,
+				824B46301B460B25009AAF49 /* Lens.swift */,
 				824B462B1B460B25009AAF49 /* Iso.swift */,
+				824B46311B460B25009AAF49 /* Prism.swift */,
 				824B462C1B460B25009AAF49 /* IxCont.swift */,
 				824B462D1B460B25009AAF49 /* IxMultiStore.swift */,
 				824B462E1B460B25009AAF49 /* IxState.swift */,
 				824B462F1B460B25009AAF49 /* IxStore.swift */,
-				824B46301B460B25009AAF49 /* Lens.swift */,
-				824B46311B460B25009AAF49 /* Prism.swift */,
 				824B46401B460B28009AAF49 /* Supporting Files */,
 			);
 			path = Focus;
@@ -653,6 +653,7 @@
 				824B46261B460AFA009AAF49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		824B462A1B460AFA009AAF49 /* Build configuration list for PBXNativeTarget "Focus-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +662,7 @@
 				824B46281B460AFA009AAF49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
