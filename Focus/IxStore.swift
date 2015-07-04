@@ -39,7 +39,7 @@ public struct IxStore<O, I, A> {
 		return f <!> self
 	}
 
-    /// Returns an `IxStore` that retrieves
+    /// Returns an `IxStore` that retrieves an `IxStore` for every index in the receiver.
 	public func duplicate<J>() -> IxStore<O, J, IxStore<J, I, A>> {
         return IxStore<O, J, IxStore<J, I, A>>(pos) { IxStore<J, I, A>($0, self.set) }
 	}
