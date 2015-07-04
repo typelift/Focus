@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// Captures an isomorphism between S and A and
+/// Captures an isomorphism between S and A.
 public struct Iso<S, T, A, B> {
 	public let get : S -> A
 	public let inject : B -> T
@@ -17,15 +17,22 @@ public struct Iso<S, T, A, B> {
 		self.inject = inject
 	}
 
-	
+	/// Runs a value S along both parts of the Iso.
 	public func modify(v : S, _ f : A -> B) -> T {
 		return inject(f(get(v)))
 	}
 
-	public var asLens : Lens<S, T, A, B> {
-		return Lens { s in IxStore(self.get(s)) { self.inject($0) } }
-	}
-
+    /// Composes an `Iso` with the receiver.
+    public func compose<I, J>(i2 : Iso<A, B, I, J>) -> Iso<S, T, I, J> {
+        return self • i2
+    }
+    
+    /// Converts an Iso to a Lens.
+    public var asLens : Lens<S, T, A, B> {
+        return Lens { s in IxStore(self.get(s)) { self.inject($0) } }
+    }
+    
+    /// Converts an Iso to a Prism with a getter that always succeeds..
 	public var asPrism : Prism<S, T, A, B> {
 		return Prism(tryGet: { .Some(self.get($0)) }, inject: inject)
 	}
@@ -39,9 +46,4 @@ public func identity<S, T>() -> Iso<S, T, S, T> {
 /// Compose isomorphisms.
 public func • <S, T, I, J, A, B>(i1 : Iso<S, T, I, J>, i2 : Iso<I, J, A, B>) -> Iso<S, T, A, B> {
 	return Iso(get: i2.get • i1.get, inject: i1.inject • i2.inject)
-}
-
-/// Compose isomorphisms.
-public func comp<S, T, I, J, A, B>(i1 : Iso<S, T, I, J>)(i2 : Iso<I, J, A, B>) -> Iso<S, T, A, B> {
-	return i1 • i2
 }
