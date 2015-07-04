@@ -7,9 +7,13 @@
 //
 
 /// Captures an isomorphism between S and A.
+///
+/// :param: S The source of the Iso heading right
+/// :param: T The target of the Iso heading left
+/// :param: A The source of the Iso heading right
+/// :param: B The target of the Iso heading left
 public struct Iso<S, T, A, B> {
-    ///
-	public let get : S -> A
+    public let get : S -> A
 	public let inject : B -> T
 
 	/// Builds an Iso from a pair of inverse functions.

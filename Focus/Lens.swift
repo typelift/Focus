@@ -24,6 +24,11 @@
 /// - Setting twice is the same as setting once:
 ///
 ///     l.set(l.set(s, a), b) == l.set(s, b)
+///
+/// :param: S The source of the Lens
+/// :param: T The modified source of the Lens
+/// :param: A The target of the Lens
+/// :param: B The modified target the Lens
 public struct Lens<S, T, A, B> {
     /// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	public let run : S -> IxStore<A, B, T>

@@ -7,6 +7,11 @@
 //
 
 /// A Prism is an `Iso` where one of the functions is partial.
+///
+/// :param: S The source of the Prism
+/// :param: T The modified source of the Prism
+/// :param: A The possible target of the Prism
+/// :param: B The modified target the Prism
 public struct Prism<S, T, A, B> {
 	public let tryGet : S -> A?
 	public let inject : B -> T
