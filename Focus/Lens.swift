@@ -37,11 +37,12 @@ public struct Lens<S, T, A, B> {
 		self.run = run
 	}
 
+    /// Creates a lens from a getter/setter pair.
 	public init(get : S -> A, set : (S, B) -> T) {
 		self.init({ v in IxStore(get(v)) { set(v, $0) } })
 	}
 
-    /// Creates a lens that uses a applies a modifier function to any values
+    /// Creates a lens that transforms set values by a given function before they are returned.
 	public init(get : S -> A, modify : (S, A -> B) -> T) {
 		self.init(get: get, set: { v, x in modify(v) { _ in x } })
 	}
