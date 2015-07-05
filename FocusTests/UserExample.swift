@@ -23,11 +23,6 @@ public class User {
 		attr = r
 	}
 	
-	// JSON
-	public class func create(x : String) -> Int -> ([String] -> String -> User) {
-		return { y in { z in { User(x, y, z, $0) } } }
-	}
-	
 	// lens example
 	public class func luserName() -> Lens<User, User, String, String> {
 		return Lens { user in IxStore(user.name) { User($0, user.age, user.tweets, user.attr) } }
