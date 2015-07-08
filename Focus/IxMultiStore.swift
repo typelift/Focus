@@ -87,7 +87,7 @@ public func <^> <O, I, A, B>(f : A -> B, a : IxMultiStore<O, I, A>) -> IxMultiSt
 	return IxMultiStore(a.pos, { g in { f(g($0)) } } <^> a.set)
 }
 
-public func<^^><O, P, I, A>(f : O -> P, a : IxMultiStore<O, I, A>) -> IxMultiStore<P, I, A> {
+public func <^^> <O, P, I, A>(f : O -> P, a : IxMultiStore<O, I, A>) -> IxMultiStore<P, I, A> {
 	return IxMultiStore(f(a.pos), a.set)
 }
 
