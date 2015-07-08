@@ -10,13 +10,14 @@ import XCTest
 import SwiftCheck
 import Focus
 
-/// For now, until I can think of a sensible way to generate Prisms.
-let prismNilGen = Gen.pure(Prism<Int, Int, String, String>(tryGet: { _ in nil }, inject: { $0.characters.count }))
-
 class PrismSpec : XCTestCase {
     func testPrismLaws() {
-		property("modify-identity") <- forAll { (fs : IsoOf<Int, UInt>) in
-			return true
-        }
+		property("modify-identity") <- forAll { (fs : IsoOf<Int, UInt>, tryGet : ArrowOf<UInt, OptionalOf<UInt>>) in
+			let prism = Prism<Int, Int, UInt, UInt>(tryGet: { $0.getOptional } • tryGet.getArrow • fs.getTo, inject: fs.getFrom)
+			return forAll { (l : Int) in
+				let m = prism.tryModify(l, { $0 })
+				return m != nil ==> (m == l)
+			}
+		}
     }
 }
