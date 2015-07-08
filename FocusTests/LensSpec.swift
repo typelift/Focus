@@ -10,36 +10,33 @@ import XCTest
 import SwiftCheck
 import Focus
 
-/// For now, until I can think of a sensible way to generate Lenses.
-let lensGen = Gen.pure(Lens<(Int, UInt), (Int, UInt), UInt, UInt>(get: { $0.1 }, set: { t, v in (t.0, v) }))
-
 class LensSpec : XCTestCase {
     func testLensLaws() {
-        property("get-set") <- forAllShrink(lensGen, shrinker: { _ in [] }) { lens in
-            return forAll { (l : Int, r : UInt) in
-                let s = (l, r)
-                return lens.set(s, lens.get(s)) == s
+		property("get-set") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = Lens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+            return forAll { (l : Int) in
+                return lens.set(l, lens.get(l)) == l
             }
         }
         
-        property("set-get") <- forAllShrink(lensGen, shrinker: { _ in [] }) { lens in
+        property("set-get") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = Lens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+            return forAll { (l : Int, a : UInt) in
+                return lens.get(lens.set(l, a)) == a
+            }
+        }
+        
+        property("idempotent-set") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = Lens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
             return forAll { (l : Int, r : UInt, a : UInt) in
-                let s = (l, r)
-                return lens.get(lens.set(s, a)) == a
+                return lens.set(lens.set(l, a), r) == lens.set(l, r)
             }
         }
         
-        property("idempotent-set") <- forAllShrink(lensGen, shrinker: { _ in [] }) { lens in
-            return forAll { (l : Int, r : UInt, a : UInt) in
-                let s = (l, r)
-                return lens.set(lens.set(s, a), a) == lens.set(s, a)
-            }
-        }
-        
-        property("idempotent-identity") <- forAllShrink(lensGen, shrinker: { _ in [] }) { lens in
-            return forAll { (l : Int, r : UInt) in
-                let s = (l, r)
-                return lens.modify(s, { $0 }) == s
+        property("idempotent-identity") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = Lens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+            return forAll { (l : Int) in
+                return lens.modify(l, { $0 }) == l
             }
         }
     }

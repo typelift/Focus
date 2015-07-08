@@ -10,19 +10,21 @@ import XCTest
 import SwiftCheck
 import Focus
 
-// Don't use this, am out of my mind.
-//extension Iso where S : protocol<Hashable, CoArbitrary>, T : Arbitrary, A : Arbitrary, B : protocol<Hashable, CoArbitrary> {
-//    static func arbitrary() -> Gen<Iso<S, T, A, B>> {
-//        return ArrowOf<S, A>.arbitrary().bind { g in
-//            return ArrowOf<B, T>.arbitrary().bind { s in
-//                let there = g.getArrow
-//                let andBackAgain = s.getArrow
-//                return Gen.pure(Iso(get: there, inject: andBackAgain))
-//            }
-//        }
-//    }
-//
-//    static func shrink(_ : Iso<S, T, A, B>) -> [Iso<S, T, A, B>] {
-//        return []
-//    }
-//}
+class IsoSpec : XCTestCase {
+	func testIsoLaws() {
+		property("around the world") <- forAll { (x : UInt, fs : IsoOf<Int, UInt>) in
+			let iso = Iso<Int, Int, UInt, UInt>(get: fs.getTo, inject: fs.getFrom)
+			return iso.get(iso.inject(x)) == x
+		}
+		
+		property("and back again") <- forAll { (x : Int, fs : IsoOf<Int, UInt>) in
+			let iso = Iso<Int, Int, UInt, UInt>(get: fs.getTo, inject: fs.getFrom)
+			return iso.inject(iso.get(x)) == x
+		}
+		
+		property("modify-identity") <- forAll { (x : Int, fs : IsoOf<Int, UInt>) in
+			let iso = Iso<Int, Int, UInt, UInt>(get: fs.getTo, inject: fs.getFrom)
+			return iso.modify(x, { $0 }) == x
+		}
+	}
+}
