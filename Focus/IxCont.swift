@@ -9,36 +9,36 @@
 /// `IxCont` is the Continuation Monad indexed by a result type `R`, an immediate output type `O` 
 /// and a value `A`.
 public struct IxCont<R, O, A> {
-    /// Lowers an `IxCont` to an indexed continuation function.
+	/// Lowers an `IxCont` to an indexed continuation function.
 	public let run : (A -> O) -> R
 
-    /// Lifts an indexed continuation function into an `IxCont`.
+	/// Lifts an indexed continuation function into an `IxCont`.
 	public init(_ run : (A -> O) -> R) {
 		self.run = run
 	}
 
-    /// Applies a function that transforms the input value of the continuation function.
+	/// Applies a function that transforms the input value of the continuation function.
 	public func map<B>(f : A -> B) -> IxCont<R, O, B> {
 		return f <^> self
 	}
 
-    /// Applies a function that transforms the final output value of the continuation function.
+	/// Applies a function that transforms the final output value of the continuation function.
 	public func imap<S>(f : R -> S) -> IxCont<S, O, A> {
 		return f <^^> self
 	}
 
-    /// Applies a function that transforms the immediate output value of the continuation function.
+	/// Applies a function that transforms the immediate output value of the continuation function.
 	public func contramap<N>(f : N -> O) -> IxCont<R, N, A> {
 		return f <!> self
 	}
 
-    /// Composes two continuation functions by applying the final result of the second to the
-    /// immediate value of the first then running both continuations in series.
+	/// Composes two continuation functions by applying the final result of the second to the
+	/// immediate value of the first then running both continuations in series.
 	public func ap<E, B>(f : IxCont<E, R, A -> B>) -> IxCont<E, O, B> {
 		return f <*> self
 	}
 
-    /// Fits the receiver together with a second continuation and runs them in series.
+	/// Fits the receiver together with a second continuation and runs them in series.
 	public func flatMap<E, B>(f : A -> IxCont<O, E, B>) -> IxCont<R, E, B> {
 		return self >>- f
 	}

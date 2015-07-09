@@ -11,7 +11,7 @@ import SwiftCheck
 import Focus
 
 class PrismSpec : XCTestCase {
-    func testPrismLaws() {
+	func testPrismLaws() {
 		property("modify-identity") <- forAll { (fs : IsoOf<Int, UInt>) in
 			/// Cannot generate this in the forAll because we need this to be memoizing and consistent with the Iso.
 			let tryGet = ArrowOf<UInt, OptionalOf<UInt>>({ arc4random() % 4 == 0 ? OptionalOf(.None) : OptionalOf(.Some($0)) })
@@ -21,5 +21,5 @@ class PrismSpec : XCTestCase {
 				return m != nil ==> (m == l)
 			}
 		}
-    }
+	}
 }
