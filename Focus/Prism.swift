@@ -21,14 +21,14 @@ public struct Prism<S, T, A, B> {
 		self.inject = inject
 	}
 
-    /// Composes a `Prism` with the receiver.
-    public func compose<I, J>(i2 : Prism<A, B, I, J>) -> Prism<S, T, I, J> {
-        return self • i2
-    }
-    
-    /// Attempts to run a value of type `S` along both parts of the Prism.  If `.None` is
-    /// encountered along the getter returns `.None`, else returns `.Some` containing the final
-    /// value.
+	/// Composes a `Prism` with the receiver.
+	public func compose<I, J>(i2 : Prism<A, B, I, J>) -> Prism<S, T, I, J> {
+		return self • i2
+	}
+	
+	/// Attempts to run a value of type `S` along both parts of the Prism.  If `.None` is
+	/// encountered along the getter returns `.None`, else returns `.Some` containing the final
+	/// value.
 	public func tryModify(s : S, _ f : A -> B) -> T? {
 		return tryGet(s).map(self.inject • f)
 	}
@@ -40,10 +40,10 @@ public func • <S, T, I, J, A, B>(p1 : Prism<S, T, I, J>, p2 : Prism<I, J, A, B
 
 /// Provides a Prism for tweaking values inside `.Some`.
 public func _Some<A, B>() -> Prism<A?, B?, A, B> {
-    return Prism(tryGet: identity, inject: Optional<B>.Some)
+	return Prism(tryGet: identity, inject: Optional<B>.Some)
 }
 
 /// Provides a Prism for traversing `.None`.
 public func _None<A, B>() -> Prism<A?, B?, A, B> {
-    return Prism(tryGet: { _ in .None }, inject: { _ in .None })
+	return Prism(tryGet: { _ in .None }, inject: { _ in .None })
 }

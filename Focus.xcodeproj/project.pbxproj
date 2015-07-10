@@ -32,6 +32,17 @@
 		824B464D1B460E69009AAF49 /* PartyExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B464A1B460E69009AAF49 /* PartyExample.swift */; };
 		824B464E1B460E69009AAF49 /* UserExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B464B1B460E69009AAF49 /* UserExample.swift */; };
 		824B464F1B460E69009AAF49 /* UserExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B464B1B460E69009AAF49 /* UserExample.swift */; };
+		82DD8EDA1B48D1DD00B66551 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DD8ECF1B48D1CA00B66551 /* SwiftCheck.framework */; };
+		82DD8EDB1B48D1E200B66551 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DD8ED31B48D1CA00B66551 /* SwiftCheck.framework */; };
+		82DD8EDF1B48D2EB00B66551 /* LensSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */; };
+		82DD8EE01B48D2EB00B66551 /* LensSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */; };
+		82DD8EE21B48D31E00B66551 /* Focus.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 824B46141B460AFA009AAF49 /* Focus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82DD8EE41B48DDB200B66551 /* PrismSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE31B48DDB200B66551 /* PrismSpec.swift */; };
+		82DD8EE51B48DDB200B66551 /* PrismSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE31B48DDB200B66551 /* PrismSpec.swift */; };
+		82DD8EE71B48DF8700B66551 /* IsoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE61B48DF8700B66551 /* IsoSpec.swift */; };
+		82DD8EE81B48DF8700B66551 /* IsoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE61B48DF8700B66551 /* IsoSpec.swift */; };
+		82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
+		82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +60,62 @@
 			remoteGlobalIDString = 824B46131B460AFA009AAF49;
 			remoteInfo = "Focus-iOS";
 		};
+		82DD8ECE1B48D1CA00B66551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 844FCC8D198B320500EB242A;
+			remoteInfo = SwiftCheck;
+		};
+		82DD8ED01B48D1CA00B66551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 844FCC98198B320500EB242A;
+			remoteInfo = SwiftCheckTests;
+		};
+		82DD8ED21B48D1CA00B66551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84DF75F81B0BD54600C912B0;
+			remoteInfo = "SwiftCheck-iOS";
+		};
+		82DD8ED41B48D1CA00B66551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84DF76021B0BD54600C912B0;
+			remoteInfo = "SwiftCheck-iOSTests";
+		};
+		82DD8ED61B48D1D200B66551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84DF75F71B0BD54600C912B0;
+			remoteInfo = "SwiftCheck-iOS";
+		};
+		82DD8ED81B48D1D700B66551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 844FCC8C198B320500EB242A;
+			remoteInfo = SwiftCheck;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82DD8EE11B48D31600B66551 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82DD8EE21B48D31E00B66551 /* Focus.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		824B45F51B460AC1009AAF49 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +136,11 @@
 		824B46471B460C1E009AAF49 /* LensOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensOperators.swift; sourceTree = "<group>"; };
 		824B464A1B460E69009AAF49 /* PartyExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyExample.swift; sourceTree = "<group>"; };
 		824B464B1B460E69009AAF49 /* UserExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExample.swift; sourceTree = "<group>"; };
+		82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftCheck.xcodeproj; path = Carthage/Checkouts/SwiftCheck/SwiftCheck.xcodeproj; sourceTree = SOURCE_ROOT; };
+		82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensSpec.swift; sourceTree = "<group>"; };
+		82DD8EE31B48DDB200B66551 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismSpec.swift; sourceTree = "<group>"; };
+		82DD8EE61B48DF8700B66551 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoSpec.swift; sourceTree = "<group>"; };
+		82DD8EFC1B4CE0E600B66551 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DD8EDA1B48D1DD00B66551 /* SwiftCheck.framework in Frameworks */,
 				824B46001B460AC1009AAF49 /* Focus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DD8EDB1B48D1E200B66551 /* SwiftCheck.framework in Frameworks */,
 				824B461E1B460AFA009AAF49 /* Focus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +205,7 @@
 			children = (
 				824B46411B460BE2009AAF49 /* ArrayZipper.swift */,
 				824B46471B460C1E009AAF49 /* LensOperators.swift */,
+				82DD8EFC1B4CE0E600B66551 /* Operators.swift */,
 				824B46301B460B25009AAF49 /* Lens.swift */,
 				824B462B1B460B25009AAF49 /* Iso.swift */,
 				824B46311B460B25009AAF49 /* Prism.swift */,
@@ -147,9 +221,11 @@
 		824B46031B460AC1009AAF49 /* FocusTests */ = {
 			isa = PBXGroup;
 			children = (
-				824B464A1B460E69009AAF49 /* PartyExample.swift */,
-				824B464B1B460E69009AAF49 /* UserExample.swift */,
-				824B46061B460AC1009AAF49 /* Info.plist */,
+				82DD8EDD1B48D21500B66551 /* Examples */,
+				82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */,
+				82DD8EE31B48DDB200B66551 /* PrismSpec.swift */,
+				82DD8EE61B48DF8700B66551 /* IsoSpec.swift */,
+				82DD8EDC1B48D1E900B66551 /* Supporting Files */,
 			);
 			path = FocusTests;
 			sourceTree = "<group>";
@@ -160,6 +236,35 @@
 				824B45FA1B460AC1009AAF49 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82DD8EC81B48D1CA00B66551 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82DD8ECF1B48D1CA00B66551 /* SwiftCheck.framework */,
+				82DD8ED11B48D1CA00B66551 /* SwiftCheckTests.xctest */,
+				82DD8ED31B48D1CA00B66551 /* SwiftCheck.framework */,
+				82DD8ED51B48D1CA00B66551 /* SwiftCheck-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82DD8EDC1B48D1E900B66551 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */,
+				824B46061B460AC1009AAF49 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82DD8EDD1B48D21500B66551 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				824B464A1B460E69009AAF49 /* PartyExample.swift */,
+				824B464B1B460E69009AAF49 /* UserExample.swift */,
+			);
+			name = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +317,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				82DD8ED91B48D1D700B66551 /* PBXTargetDependency */,
 				824B46021B460AC1009AAF49 /* PBXTargetDependency */,
 			);
 			name = FocusTests;
@@ -244,10 +350,12 @@
 				824B46191B460AFA009AAF49 /* Sources */,
 				824B461A1B460AFA009AAF49 /* Frameworks */,
 				824B461B1B460AFA009AAF49 /* Resources */,
+				82DD8EE11B48D31600B66551 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				82DD8ED71B48D1D200B66551 /* PBXTargetDependency */,
 				824B46201B460AFA009AAF49 /* PBXTargetDependency */,
 			);
 			name = "Focus-iOSTests";
@@ -289,6 +397,12 @@
 			mainGroup = 824B45EB1B460AC1009AAF49;
 			productRefGroup = 824B45F61B460AC1009AAF49 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 82DD8EC81B48D1CA00B66551 /* Products */;
+					ProjectRef = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				824B45F41B460AC1009AAF49 /* Focus */,
@@ -298,6 +412,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		82DD8ECF1B48D1CA00B66551 /* SwiftCheck.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftCheck.framework;
+			remoteRef = 82DD8ECE1B48D1CA00B66551 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82DD8ED11B48D1CA00B66551 /* SwiftCheckTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftCheckTests.xctest;
+			remoteRef = 82DD8ED01B48D1CA00B66551 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82DD8ED31B48D1CA00B66551 /* SwiftCheck.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftCheck.framework;
+			remoteRef = 82DD8ED21B48D1CA00B66551 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82DD8ED51B48D1CA00B66551 /* SwiftCheck-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftCheck-iOSTests.xctest";
+			remoteRef = 82DD8ED41B48D1CA00B66551 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		824B45F31B460AC1009AAF49 /* Resources */ = {
@@ -336,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				824B46361B460B25009AAF49 /* IxMultiStore.swift in Sources */,
+				82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463E1B460B25009AAF49 /* Prism.swift in Sources */,
 				824B46341B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46381B460B25009AAF49 /* IxState.swift in Sources */,
@@ -351,6 +497,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DD8EE41B48DDB200B66551 /* PrismSpec.swift in Sources */,
+				82DD8EDF1B48D2EB00B66551 /* LensSpec.swift in Sources */,
+				82DD8EE71B48DF8700B66551 /* IsoSpec.swift in Sources */,
 				824B464C1B460E69009AAF49 /* PartyExample.swift in Sources */,
 				824B464E1B460E69009AAF49 /* UserExample.swift in Sources */,
 			);
@@ -361,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				824B46371B460B25009AAF49 /* IxMultiStore.swift in Sources */,
+				82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463F1B460B25009AAF49 /* Prism.swift in Sources */,
 				824B46351B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46391B460B25009AAF49 /* IxState.swift in Sources */,
@@ -376,6 +526,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DD8EE51B48DDB200B66551 /* PrismSpec.swift in Sources */,
+				82DD8EE01B48D2EB00B66551 /* LensSpec.swift in Sources */,
+				82DD8EE81B48DF8700B66551 /* IsoSpec.swift in Sources */,
 				824B464D1B460E69009AAF49 /* PartyExample.swift in Sources */,
 				824B464F1B460E69009AAF49 /* UserExample.swift in Sources */,
 			);
@@ -393,6 +546,16 @@
 			isa = PBXTargetDependency;
 			target = 824B46131B460AFA009AAF49 /* Focus-iOS */;
 			targetProxy = 824B461F1B460AFA009AAF49 /* PBXContainerItemProxy */;
+		};
+		82DD8ED71B48D1D200B66551 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftCheck-iOS";
+			targetProxy = 82DD8ED61B48D1D200B66551 /* PBXContainerItemProxy */;
+		};
+		82DD8ED91B48D1D700B66551 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftCheck;
+			targetProxy = 82DD8ED81B48D1D700B66551 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
