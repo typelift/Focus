@@ -33,6 +33,7 @@ public struct Lens<S, T, A, B> {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	public let run : S -> IxStore<A, B, T>
 
+	/// Produces a lens from an Indexed Costate Comonad Coalgebroid.
 	public init(_ run : S -> IxStore<A, B, T>) {
 		self.run = run
 	}

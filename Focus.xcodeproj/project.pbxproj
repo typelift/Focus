@@ -130,7 +130,7 @@
 		824B462D1B460B25009AAF49 /* IxMultiStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxMultiStore.swift; sourceTree = "<group>"; };
 		824B462E1B460B25009AAF49 /* IxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxState.swift; sourceTree = "<group>"; };
 		824B462F1B460B25009AAF49 /* IxStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxStore.swift; sourceTree = "<group>"; };
-		824B46301B460B25009AAF49 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
+		824B46301B460B25009AAF49 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; usesTabs = 1; };
 		824B46311B460B25009AAF49 /* Prism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
 		824B46411B460BE2009AAF49 /* ArrayZipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayZipper.swift; sourceTree = "<group>"; };
 		824B46471B460C1E009AAF49 /* LensOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensOperators.swift; sourceTree = "<group>"; };
