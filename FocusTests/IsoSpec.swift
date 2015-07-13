@@ -26,5 +26,19 @@ class IsoSpec : XCTestCase {
 			let iso = Iso<Int, Int, UInt, UInt>(get: fs.getTo, inject: fs.getFrom)
 			return iso.modify(x, { $0 }) == x
 		}
+
+		property("compose is associative (get)") <- forAll { (x : Int, fs : IsoOf<Int, Int>, gs : IsoOf<Int, Int>) in
+			let iso1 = Iso<Int, Int, Int, Int>(get: fs.getTo, inject: fs.getFrom)
+			let iso2 = Iso<Int, Int, Int, Int>(get: gs.getTo, inject: gs.getFrom)
+			let isoC = iso1.compose(iso2)
+			return iso2.get(iso1.get(x)) == isoC.get(x)
+		}
+
+		property("compose is associative (inject)") <- forAll { (x : Int, fs : IsoOf<Int, Int>, gs : IsoOf<Int, Int>) in
+			let iso1 = Iso<Int, Int, Int, Int>(get: fs.getTo, inject: fs.getFrom)
+			let iso2 = Iso<Int, Int, Int, Int>(get: gs.getTo, inject: gs.getFrom)
+			let isoC = iso1.compose(iso2)
+			return iso1.inject(iso2.inject(x)) == isoC.inject(x)
+		}
 	}
 }

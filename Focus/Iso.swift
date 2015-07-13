@@ -12,35 +12,33 @@
 /// - parameter T: The target of the Iso heading left
 /// - parameter A: The source of the Iso heading right
 /// - parameter B: The target of the Iso heading left
-public struct Iso<S, T, A, B> {
-	public let get : S -> A
-	public let inject : B -> T
+public struct Iso<S, T, A, B> : IsoType {
+    typealias Source = S
+	typealias Target = A
+	typealias AltSource = T
+	typealias AltTarget = B
+
+	private let _get : S -> A
+	private let _inject : B -> T
 
 	/// Builds an Iso from a pair of inverse functions.
-	public init(get : S -> A, inject : B -> T) {
-		self.get = get
-		self.inject = inject
+	public init(get f : S -> A, inject g : B -> T) {
+		_get = f
+		_inject = g
 	}
 
-	/// Runs a value of type `S` along both parts of the Iso.
-	public func modify(v : S, _ f : A -> B) -> T {
-		return inject(f(get(v)))
+	public func get(v: S) -> A {
+		return _get(v)
 	}
 
-	/// Composes an `Iso` with the receiver.
-	public func compose<I, J>(i2 : Iso<A, B, I, J>) -> Iso<S, T, I, J> {
-		return self • i2
+	public func inject(x: B) -> T {
+		return _inject(x)
 	}
-	
-	/// Converts an Iso to a Lens.
-	public var asLens : Lens<S, T, A, B> {
-		return Lens { s in IxStore(self.get(s)) { self.inject($0) } }
-	}
-	
-	/// Converts an Iso to a Prism with a getter that always succeeds..
-	public var asPrism : Prism<S, T, A, B> {
-		return Prism(tryGet: { .Some(self.get($0)) }, inject: inject)
-	}
+}
+
+public protocol IsoType : OpticFamilyType {
+	func get(_ : Source) -> Target
+	func inject(_ : AltTarget) -> AltSource
 }
 
 /// The identity isomorphism.
@@ -48,7 +46,27 @@ public func identity<S, T>() -> Iso<S, T, S, T> {
 	return Iso(get: identity, inject: identity)
 }
 
+extension IsoType {
+	/// Runs a value of type `S` along both parts of the Iso.
+	public func modify(v : Source, _ f : Target -> AltTarget) -> AltSource {
+		return inject(f(get(v)))
+	}
+
+	/// Composes an `Iso` with the receiver.
+	public func compose<Other : IsoType where
+		Self.Target == Other.Source,
+		Self.AltTarget == Other.AltSource>
+		(other : Other) -> Iso<Self.Source, Self.AltSource, Other.Target, Other.AltTarget>
+	{
+		return Iso(get: other.get • self.get, inject: self.inject • other.inject)
+	}
+}
+
 /// Compose isomorphisms.
-public func • <S, T, I, J, A, B>(i1 : Iso<S, T, I, J>, i2 : Iso<I, J, A, B>) -> Iso<S, T, A, B> {
-	return Iso(get: i2.get • i1.get, inject: i1.inject • i2.inject)
+public func • <Left : IsoType, Right: IsoType where
+	Left.Target == Right.Source,
+	Left.AltTarget == Right.AltSource>
+	(l : Left, r : Right) -> Iso<Left.Source, Left.AltSource, Right.Target, Right.AltTarget>
+{
+	return l.compose(r)
 }
