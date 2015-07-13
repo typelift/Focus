@@ -63,6 +63,15 @@ public protocol LensType: OpticFamilyType {
 	func run(_ : Source) -> IxStore<Target, AltTarget, AltSource>
 }
 
+extension Lens {
+	public init<Other : LensType where
+		S == Other.Source, A == Other.Target, T == Other.AltSource, B == Other.AltTarget>
+		(_ other : Other)
+	{
+		self.init(other.run)
+	}
+}
+
 extension LensType {
 	/// Runs the getter on a given structure.
 	public func get(v : Source) -> Target {

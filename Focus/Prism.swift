@@ -40,6 +40,15 @@ public protocol PrismType: OpticFamilyType {
 	func inject(_ : AltTarget) -> AltSource
 }
 
+extension Prism {
+	public init<Other : PrismType where
+		S == Other.Source, A == Other.Target, T == Other.AltSource, B == Other.AltTarget>
+		(_ other : Other)
+	{
+		self.init(tryGet: other.tryGet, inject: other.inject)
+	}
+}
+
 /// Provides a Prism for tweaking values inside `.Some`.
 public func _Some<A, B>() -> Prism<A?, B?, A, B> {
 	return Prism(tryGet: identity, inject: Optional<B>.Some)

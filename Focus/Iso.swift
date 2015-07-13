@@ -41,6 +41,15 @@ public protocol IsoType : OpticFamilyType, LensType, PrismType {
 	func inject(_ : AltTarget) -> AltSource
 }
 
+extension Iso {
+	public init<Other : IsoType where
+		S == Other.Source, A == Other.Target, T == Other.AltSource, B == Other.AltTarget>
+		(_ other : Other)
+	{
+		self.init(get: other.get, inject: other.inject)
+	}
+}
+
 /// The identity isomorphism.
 public func identity<S, T>() -> Iso<S, T, S, T> {
 	return Iso(get: identity, inject: identity)
