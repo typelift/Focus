@@ -36,7 +36,7 @@ public struct Iso<S, T, A, B> : IsoType {
 	}
 }
 
-public protocol IsoType : OpticFamilyType, LensType {
+public protocol IsoType : OpticFamilyType, LensType, PrismType {
 	func get(_ : Source) -> Target
 	func inject(_ : AltTarget) -> AltSource
 }
@@ -51,6 +51,10 @@ extension IsoType {
 		return IxStore<Target, AltTarget, AltSource>(get(v)) { x in
 			return self.inject(x)
 		}
+	}
+
+	public func tryGet(v : Source) -> Target? {
+		return get(v)
 	}
 
 	/// Runs a value of type `S` along both parts of the Iso.
