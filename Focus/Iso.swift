@@ -13,7 +13,7 @@
 /// - parameter A: The source of the Iso heading right
 /// - parameter B: The target of the Iso heading left
 public struct Iso<S, T, A, B> : IsoType {
-    typealias Source = S
+	typealias Source = S
 	typealias Target = A
 	typealias AltSource = T
 	typealias AltTarget = B
@@ -27,16 +27,16 @@ public struct Iso<S, T, A, B> : IsoType {
 		_inject = g
 	}
 
-	public func get(v: S) -> A {
+	public func get(v : S) -> A {
 		return _get(v)
 	}
 
-	public func inject(x: B) -> T {
+	public func inject(x : B) -> T {
 		return _inject(x)
 	}
 }
 
-public protocol IsoType : OpticFamilyType {
+public protocol IsoType : OpticFamilyType, LensType {
 	func get(_ : Source) -> Target
 	func inject(_ : AltTarget) -> AltSource
 }
@@ -47,6 +47,12 @@ public func identity<S, T>() -> Iso<S, T, S, T> {
 }
 
 extension IsoType {
+	public func run(v : Source) -> IxStore<Target, AltTarget, AltSource> {
+		return IxStore<Target, AltTarget, AltSource>(get(v)) { x in
+			return self.inject(x)
+		}
+	}
+
 	/// Runs a value of type `S` along both parts of the Iso.
 	public func modify(v : Source, _ f : Target -> AltTarget) -> AltSource {
 		return inject(f(get(v)))
@@ -56,7 +62,7 @@ extension IsoType {
 	public func compose<Other : IsoType where
 		Self.Target == Other.Source,
 		Self.AltTarget == Other.AltSource>
-		(other : Other) -> Iso<Self.Source, Self.AltSource, Other.Target, Other.AltTarget>
+		(other : Other) -> Iso<Source, AltSource, Other.Target, Other.AltTarget>
 	{
 		return Iso(get: other.get • self.get, inject: self.inject • other.inject)
 	}
