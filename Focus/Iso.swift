@@ -8,10 +8,10 @@
 
 /// Captures an isomorphism between S and A.
 ///
-/// :param: S The source of the Iso heading right
-/// :param: T The target of the Iso heading left
-/// :param: A The source of the Iso heading right
-/// :param: B The target of the Iso heading left
+/// - parameter S: The source of the Iso heading right
+/// - parameter T: The target of the Iso heading left
+/// - parameter A: The source of the Iso heading right
+/// - parameter B: The target of the Iso heading left
 public struct Iso<S, T, A, B> {
 	public let get : S -> A
 	public let inject : B -> T

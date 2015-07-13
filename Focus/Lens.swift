@@ -25,14 +25,15 @@
 ///
 ///     l.set(l.set(s, a), b) == l.set(s, b)
 ///
-/// :param: S The source of the Lens
-/// :param: T The modified source of the Lens
-/// :param: A The target of the Lens
-/// :param: B The modified target the Lens
+/// - parameter S: The source of the Lens
+/// - parameter T: The modified source of the Lens
+/// - parameter A: The target of the Lens
+/// - parameter B: The modified target the Lens
 public struct Lens<S, T, A, B> {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	public let run : S -> IxStore<A, B, T>
 
+	/// Produces a lens from an Indexed Costate Comonad Coalgebroid.
 	public init(_ run : S -> IxStore<A, B, T>) {
 		self.run = run
 	}
