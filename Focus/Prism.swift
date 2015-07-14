@@ -35,7 +35,7 @@ public struct Prism<S, T, A, B> : PrismType {
 	}
 }
 
-public protocol PrismType: OpticFamilyType {
+public protocol PrismType : OpticFamilyType {
 	func tryGet(_ : Source) -> Target?
 	func inject(_ : AltTarget) -> AltSource
 }
@@ -76,7 +76,7 @@ extension PrismType {
 	}
 }
 
-public func • <Left : PrismType, Right: PrismType where
+public func • <Left : PrismType, Right : PrismType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>
 	(l : Left, r : Right) -> Prism<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> {

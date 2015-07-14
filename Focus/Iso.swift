@@ -82,7 +82,7 @@ extension IsoType {
 }
 
 /// Compose isomorphisms.
-public func • <Left : IsoType, Right: IsoType where
+public func • <Left : IsoType, Right : IsoType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>
 	(l : Left, r : Right) -> Iso<Left.Source, Left.AltSource, Right.Target, Right.AltTarget>

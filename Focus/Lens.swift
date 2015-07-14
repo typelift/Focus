@@ -58,7 +58,7 @@ public struct Lens<S, T, A, B> : LensType {
 	}
 }
 
-public protocol LensType: OpticFamilyType {
+public protocol LensType : OpticFamilyType {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	func run(_ : Source) -> IxStore<Target, AltTarget, AltSource>
 }
@@ -135,7 +135,7 @@ extension LensType {
 	}
 }
 
-public func • <Left : LensType, Right: LensType where
+public func • <Left : LensType, Right : LensType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>
 	(l : Left, r : Right) -> Lens<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> {
