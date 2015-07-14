@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11D137051B544D0000E76EBA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
+		11D137061B544D0000E76EBA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
 		824B45F91B460AC1009AAF49 /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		824B46001B460AC1009AAF49 /* Focus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824B45F51B460AC1009AAF49 /* Focus.framework */; };
 		824B461E1B460AFA009AAF49 /* Focus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824B46141B460AFA009AAF49 /* Focus.framework */; };
@@ -118,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11D137041B544D0000E76EBA /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; usesTabs = 1; };
 		824B45F51B460AC1009AAF49 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824B45F81B460AC1009AAF49 /* Focus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Focus.h; path = Focus/Focus.h; sourceTree = "<group>"; };
 		824B45FA1B460AC1009AAF49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,22 +128,22 @@
 		824B46061B460AC1009AAF49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824B46141B460AFA009AAF49 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824B461D1B460AFA009AAF49 /* Focus-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Focus-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		824B462B1B460B25009AAF49 /* Iso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iso.swift; sourceTree = "<group>"; };
-		824B462C1B460B25009AAF49 /* IxCont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxCont.swift; sourceTree = "<group>"; };
-		824B462D1B460B25009AAF49 /* IxMultiStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxMultiStore.swift; sourceTree = "<group>"; };
-		824B462E1B460B25009AAF49 /* IxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxState.swift; sourceTree = "<group>"; };
-		824B462F1B460B25009AAF49 /* IxStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxStore.swift; sourceTree = "<group>"; };
+		824B462B1B460B25009AAF49 /* Iso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iso.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B462C1B460B25009AAF49 /* IxCont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxCont.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B462D1B460B25009AAF49 /* IxMultiStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxMultiStore.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B462E1B460B25009AAF49 /* IxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxState.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B462F1B460B25009AAF49 /* IxStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IxStore.swift; sourceTree = "<group>"; usesTabs = 1; };
 		824B46301B460B25009AAF49 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; usesTabs = 1; };
-		824B46311B460B25009AAF49 /* Prism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; };
-		824B46411B460BE2009AAF49 /* ArrayZipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayZipper.swift; sourceTree = "<group>"; };
-		824B46471B460C1E009AAF49 /* LensOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensOperators.swift; sourceTree = "<group>"; };
-		824B464A1B460E69009AAF49 /* PartyExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyExample.swift; sourceTree = "<group>"; };
-		824B464B1B460E69009AAF49 /* UserExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExample.swift; sourceTree = "<group>"; };
+		824B46311B460B25009AAF49 /* Prism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prism.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B46411B460BE2009AAF49 /* ArrayZipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayZipper.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B46471B460C1E009AAF49 /* LensOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensOperators.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B464A1B460E69009AAF49 /* PartyExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyExample.swift; sourceTree = "<group>"; usesTabs = 1; };
+		824B464B1B460E69009AAF49 /* UserExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExample.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftCheck.xcodeproj; path = Carthage/Checkouts/SwiftCheck/SwiftCheck.xcodeproj; sourceTree = SOURCE_ROOT; };
-		82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensSpec.swift; sourceTree = "<group>"; };
-		82DD8EE31B48DDB200B66551 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismSpec.swift; sourceTree = "<group>"; };
-		82DD8EE61B48DF8700B66551 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoSpec.swift; sourceTree = "<group>"; };
-		82DD8EFC1B4CE0E600B66551 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; };
+		82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
+		82DD8EE31B48DDB200B66551 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
+		82DD8EE61B48DF8700B66551 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
+		82DD8EFC1B4CE0E600B66551 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +211,7 @@
 				82DD8EFC1B4CE0E600B66551 /* Operators.swift */,
 				824B46301B460B25009AAF49 /* Lens.swift */,
 				824B462B1B460B25009AAF49 /* Iso.swift */,
+				11D137041B544D0000E76EBA /* Protocols.swift */,
 				824B46311B460B25009AAF49 /* Prism.swift */,
 				824B462C1B460B25009AAF49 /* IxCont.swift */,
 				824B462D1B460B25009AAF49 /* IxMultiStore.swift */,
@@ -484,6 +488,7 @@
 				824B46361B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463E1B460B25009AAF49 /* Prism.swift in Sources */,
+				11D137051B544D0000E76EBA /* Protocols.swift in Sources */,
 				824B46341B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46381B460B25009AAF49 /* IxState.swift in Sources */,
 				824B46321B460B25009AAF49 /* Iso.swift in Sources */,
@@ -513,6 +518,7 @@
 				824B46371B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463F1B460B25009AAF49 /* Prism.swift in Sources */,
+				11D137061B544D0000E76EBA /* Protocols.swift in Sources */,
 				824B46351B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46391B460B25009AAF49 /* IxState.swift in Sources */,
 				824B46331B460B25009AAF49 /* Iso.swift in Sources */,
