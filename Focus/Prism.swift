@@ -13,10 +13,10 @@
 /// - parameter A: The possible target of the Prism
 /// - parameter B: The modified target the Prism
 public struct Prism<S, T, A, B> : PrismType {
-	typealias Source = S
-	typealias Target = A
-	typealias AltSource = T
-	typealias AltTarget = B
+	public typealias Source = S
+	public typealias Target = A
+	public typealias AltSource = T
+	public typealias AltTarget = B
 
 	private let _tryGet : S -> A?
 	private let _inject : B -> T
