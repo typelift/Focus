@@ -13,10 +13,10 @@
 /// - parameter A: The source of the Iso heading right
 /// - parameter B: The target of the Iso heading left
 public struct Iso<S, T, A, B> : IsoType {
-	typealias Source = S
-	typealias Target = A
-	typealias AltSource = T
-	typealias AltTarget = B
+	public typealias Source = S
+	public typealias Target = A
+	public typealias AltSource = T
+	public typealias AltTarget = B
 
 	private let _get : S -> A
 	private let _inject : B -> T

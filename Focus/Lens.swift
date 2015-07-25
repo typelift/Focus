@@ -30,10 +30,10 @@
 /// - parameter A: The target of the Lens
 /// - parameter B: The modified target the Lens
 public struct Lens<S, T, A, B> : LensType {
-	typealias Source = S
-	typealias Target = A
-	typealias AltSource = T
-	typealias AltTarget = B
+	public typealias Source = S
+	public typealias Target = A
+	public typealias AltSource = T
+	public typealias AltTarget = B
 
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	private let _run : S -> IxStore<A, B, T>
