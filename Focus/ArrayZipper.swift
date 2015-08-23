@@ -9,7 +9,7 @@
 /// A zipper for arrays.  Zippers are convenient ways of traversing and modifying the parts of a
 /// structure using a cursor to focus on its individual parts.
 public struct ArrayZipper<A> : ArrayLiteralConvertible {
-	typealias Element = A
+	public typealias Element = A
 
 	/// The underlying array of values.
 	public let values : [A]
@@ -50,9 +50,6 @@ public struct ArrayZipper<A> : ArrayLiteralConvertible {
 }
 
 extension ArrayZipper /*: Functor*/ {
-	typealias B = Any
-	typealias FB = ArrayZipper<B>
-	
 	public func fmap<B>(f : A -> B) -> ArrayZipper<B> {
 		return ArrayZipper<B>(self.values.map(f), self.position)
 	}
@@ -73,8 +70,6 @@ extension ArrayZipper /*: Copointed*/ {
 }
 
 extension ArrayZipper /*: Comonad*/ {
-	typealias FFA = ArrayZipper<ArrayZipper<A>>
-	
 	public func duplicate() -> ArrayZipper<ArrayZipper<A>> {
 		return ArrayZipper<ArrayZipper<A>>((0 ..< self.values.count).map { ArrayZipper(self.values, $0) }, self.position)
 	}
