@@ -44,4 +44,69 @@ extension MonomorphicLens {
 	}
 }
 
+public struct MonomorphicIso<S, A> : IsoType {
+	public typealias Source = S
+	public typealias Target = A
+	public typealias AltSource = S
+	public typealias AltTarget = A
+	
+	private let _get : S -> A
+	private let _inject : A -> S
+	
+	/// Builds a monomorphic `Iso` from a pair of inverse functions.
+	public init(get f : S -> A, inject g : A -> S) {
+		_get = f
+		_inject = g
+	}
+	
+	public func get(v : S) -> A {
+		return _get(v)
+	}
+	
+	public func inject(x : A) -> S {
+		return _inject(x)
+	}
+}
+
+extension MonomorphicIso {
+	public init<Other : IsoType where
+		S == Other.Source, A == Other.Target, S == Other.AltSource, A == Other.AltTarget>
+		(_ other : Other)
+	{
+		self.init(get: other.get, inject: other.inject)
+	}
+}
+
+public struct MonomorphicPrism<S, A> : PrismType {
+	public typealias Source = S
+	public typealias Target = A
+	public typealias AltSource = S
+	public typealias AltTarget = A
+	
+	private let _tryGet : S -> A?
+	private let _inject : A -> S
+	
+	public init(tryGet f : S -> A?, inject g : A -> S) {
+		_tryGet = f
+		_inject = g
+	}
+	
+	public func tryGet(v : Source) -> Target? {
+		return _tryGet(v)
+	}
+	
+	public func inject(x : AltTarget) -> AltSource {
+		return _inject(x)
+	}
+}
+
+extension MonomorphicPrism {
+	public init<Other : PrismType where
+		S == Other.Source, A == Other.Target, S == Other.AltSource, A == Other.AltTarget>
+		(_ other : Other)
+	{
+		self.init(tryGet: other.tryGet, inject: other.inject)
+	}
+}
+
 
