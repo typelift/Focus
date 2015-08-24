@@ -45,6 +45,8 @@
 		82DD8EE81B48DF8700B66551 /* IsoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE61B48DF8700B66551 /* IsoSpec.swift */; };
 		82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
 		82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
+		82E93EB11B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
+		82E93EB21B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,7 @@
 		82DD8EE31B48DDB200B66551 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82DD8EE61B48DF8700B66551 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82DD8EFC1B4CE0E600B66551 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
+		82E93EB01B8A7907003D5798 /* Monomorphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monomorphic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,7 @@
 				824B462D1B460B25009AAF49 /* IxMultiStore.swift */,
 				824B462E1B460B25009AAF49 /* IxState.swift */,
 				824B462F1B460B25009AAF49 /* IxStore.swift */,
+				82E93EB01B8A7907003D5798 /* Monomorphic.swift */,
 				824B46401B460B28009AAF49 /* Supporting Files */,
 			);
 			path = Focus;
@@ -488,6 +492,7 @@
 				824B46361B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463E1B460B25009AAF49 /* Prism.swift in Sources */,
+				82E93EB11B8A7907003D5798 /* Monomorphic.swift in Sources */,
 				11D137051B544D0000E76EBA /* Protocols.swift in Sources */,
 				824B46341B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46381B460B25009AAF49 /* IxState.swift in Sources */,
@@ -518,6 +523,7 @@
 				824B46371B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463F1B460B25009AAF49 /* Prism.swift in Sources */,
+				82E93EB21B8A7907003D5798 /* Monomorphic.swift in Sources */,
 				11D137061B544D0000E76EBA /* Protocols.swift in Sources */,
 				824B46351B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46391B460B25009AAF49 /* IxState.swift in Sources */,
@@ -666,6 +672,7 @@
 				INFOPLIST_FILE = Focus/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.Focus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -686,6 +693,7 @@
 				INFOPLIST_FILE = Focus/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.Focus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
