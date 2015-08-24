@@ -3,7 +3,7 @@
 //  Focus
 //
 //  Created by Robert Widmann on 8/23/15.
-//  Copyright © 2015 SypeLift. All rights reserved.
+//  Copyright © 2015 TypeLift. All rights reserved.
 //
 
 public struct SimpleLens<S, A> : LensType {
