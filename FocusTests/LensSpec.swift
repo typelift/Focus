@@ -42,6 +42,38 @@ class LensSpec : XCTestCase {
 	}
 }
 
+class SimpleLensSpec : XCTestCase {
+	func testLensLaws() {
+		property("get-set") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = SimpleLens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+			return forAll { (l : Int) in
+				return lens.set(l, lens.get(l)) == l
+			}
+		}
+		
+		property("set-get") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = SimpleLens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+			return forAll { (l : Int, a : UInt) in
+				return lens.get(lens.set(l, a)) == a
+			}
+		}
+		
+		property("idempotent-set") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = SimpleLens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+			return forAll { (l : Int, r : UInt, a : UInt) in
+				return lens.set(lens.set(l, a), r) == lens.set(l, r)
+			}
+		}
+		
+		property("idempotent-identity") <- forAll { (fs : IsoOf<Int, UInt>) in
+			let lens = SimpleLens(get: fs.getTo, set: { _, v in fs.getFrom(v) })
+			return forAll { (l : Int) in
+				return lens.modify(l, { $0 }) == l
+			}
+		}
+	}
+}
+
 func == <T : Equatable, U : Equatable>(l : (T, U), r : (T, U)) -> Bool {
 	return l.0 == r.0 && l.1 == r.1
 }
