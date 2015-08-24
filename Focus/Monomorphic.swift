@@ -6,7 +6,7 @@
 //  Copyright © 2015 SypeLift. All rights reserved.
 //
 
-public struct MonomorphicLens<S, A> : LensType {
+public struct SimpleLens<S, A> : LensType {
 	public typealias Source = S
 	public typealias Target = A
 	public typealias AltSource = S
@@ -35,7 +35,7 @@ public struct MonomorphicLens<S, A> : LensType {
 	}
 }
 
-extension MonomorphicLens {
+extension SimpleLens {
 	public init<Other : LensType where
 		S == Other.Source, A == Other.Target, S == Other.AltSource, A == Other.AltTarget>
 		(_ other : Other)
@@ -44,7 +44,7 @@ extension MonomorphicLens {
 	}
 }
 
-public struct MonomorphicIso<S, A> : IsoType {
+public struct SimpleIso<S, A> : IsoType {
 	public typealias Source = S
 	public typealias Target = A
 	public typealias AltSource = S
@@ -68,7 +68,7 @@ public struct MonomorphicIso<S, A> : IsoType {
 	}
 }
 
-extension MonomorphicIso {
+extension SimpleIso {
 	public init<Other : IsoType where
 		S == Other.Source, A == Other.Target, S == Other.AltSource, A == Other.AltTarget>
 		(_ other : Other)
@@ -77,7 +77,7 @@ extension MonomorphicIso {
 	}
 }
 
-public struct MonomorphicPrism<S, A> : PrismType {
+public struct SimplePrism<S, A> : PrismType {
 	public typealias Source = S
 	public typealias Target = A
 	public typealias AltSource = S
@@ -100,7 +100,7 @@ public struct MonomorphicPrism<S, A> : PrismType {
 	}
 }
 
-extension MonomorphicPrism {
+extension SimplePrism {
 	public init<Other : PrismType where
 		S == Other.Source, A == Other.Target, S == Other.AltSource, A == Other.AltTarget>
 		(_ other : Other)
