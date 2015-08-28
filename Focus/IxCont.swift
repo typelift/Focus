@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// `IxCont` is the Continuation Monad indexed by a result type `R`, an immediate output type `O` 
+/// `IxCont` is the Continuation Monad indexed by a result type `R`, an immediate output type `O`
 /// and a value `A`.
 public struct IxCont<R, O, A> {
 	/// Lowers an `IxCont` to an indexed continuation function.

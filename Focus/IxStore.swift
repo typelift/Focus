@@ -54,13 +54,13 @@ public struct IxStore<O, I, A> {
 	public func peek(x : I) -> A {
 		return set(x)
 	}
-	
+
 	/// Extracts a value from the store at an index given by applying a function to the receiver's
 	/// position index.
 	public func peeks(f : O -> I) -> A {
 		return set(f(pos))
 	}
-	
+
 	/// Extracts a value from the store at a given index.
 	///
 	/// With a proper Monad Transformer this function would use a Comonadic context to extract a
@@ -82,7 +82,7 @@ public struct IxStore<O, I, A> {
 	public func seek<P>(x : P) -> IxStore<P, I, A> {
 		return IxStore<P, I, A>(x, set)
 	}
-	
+
 	/// Returns a new `IxStore` with its position index set to the result of applying the given
 	/// function to the current position index.
 	public func seeks<P>(f : O -> P) -> IxStore<P, I, A> {

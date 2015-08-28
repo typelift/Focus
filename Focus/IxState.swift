@@ -55,7 +55,7 @@ public struct IxState<I, O, A> {
 	public func flatMap<E, B>(f : A -> IxState<O, E, B>) -> IxState<I, E, B> {
 		return self >>- f
 	}
-	
+
 }
 
 public func pure<I, A>(x : A) -> IxState<I, I, A> {

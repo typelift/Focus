@@ -66,12 +66,12 @@ public struct IxMultiStore<O, I, A> {
 	public func peeks(f : O -> I) -> A {
 		return peek(f(pos))
 	}
-	
+
 	/// Returns a new `IxMultiStore` with its position index set to the given value.
 	public func seek<P>(x : P) -> IxMultiStore<P, I, A> {
 		return IxMultiStore<P, I, A>(x, set)
 	}
-	
+
 	/// Returns a new `IxMultiStore` with its position index set to the result of applying the given
 	/// function to the current position index.
 	public func seeks<P>(f : O -> P) -> IxMultiStore<P, I, A> {
