@@ -65,7 +65,7 @@ extension PrismType {
 		Self.Target == Other.Source,
 		Self.AltTarget == Other.AltSource>
 		(other : Other) -> Prism<Source, AltSource, Other.Target, Other.AltTarget> {
-		return Prism(tryGet: { self.tryGet($0).flatMap(other.tryGet) }, inject: self.inject • other.inject)
+			return Prism(tryGet: { self.tryGet($0).flatMap(other.tryGet) }, inject: self.inject • other.inject)
 	}
 
 	/// Attempts to run a value of type `S` along both parts of the Prism.  If `.None` is
@@ -80,5 +80,5 @@ public func • <Left : PrismType, Right : PrismType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>
 	(l : Left, r : Right) -> Prism<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> {
-	return l.compose(r)
+		return l.compose(r)
 }

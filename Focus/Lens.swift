@@ -94,11 +94,11 @@ extension LensType {
 		Self.Target == Other.Source,
 		Self.AltTarget == Other.AltSource>
 		(other : Other) -> Lens<Source, AltSource, Other.Target, Other.AltTarget> {
-		return Lens { v in
-			let q1 = self.run(v)
-			let q2 = other.run(q1.pos)
-			return IxStore(q2.pos) { q1.peek(q2.peek($0)) }
-		}
+			return Lens { v in
+				let q1 = self.run(v)
+				let q2 = other.run(q1.pos)
+				return IxStore(q2.pos) { q1.peek(q2.peek($0)) }
+			}
 	}
 
 	/// Uses the receiver to focus in on a State Monad.
@@ -139,5 +139,5 @@ public func • <Left : LensType, Right : LensType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>
 	(l : Left, r : Right) -> Lens<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> {
-	return l.compose(r)
+		return l.compose(r)
 }

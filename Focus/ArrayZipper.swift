@@ -32,7 +32,7 @@ public struct ArrayZipper<A> : ArrayLiteralConvertible {
 		self.init(elements, 0)
 	}
 
-	/// Creates an `ArrayZipper` with the cursor adjusted by n in the direction of the sign of the 
+	/// Creates an `ArrayZipper` with the cursor adjusted by n in the direction of the sign of the
 	/// given value.
 	public func move(n : Int = 1) -> ArrayZipper<A> {
 		return ArrayZipper(values, position + n)
@@ -42,7 +42,7 @@ public struct ArrayZipper<A> : ArrayLiteralConvertible {
 	public func moveTo(pos : Int) -> ArrayZipper<A> {
 		return ArrayZipper(values, pos)
 	}
-	
+
 	/// Returns whether the cursor of the receiver is at the end of its underlying Array.
 	public var isAtEnd : Bool {
 		return position >= (values.count - 1)
@@ -73,7 +73,7 @@ extension ArrayZipper /*: Comonad*/ {
 	public func duplicate() -> ArrayZipper<ArrayZipper<A>> {
 		return ArrayZipper<ArrayZipper<A>>((0 ..< self.values.count).map { ArrayZipper(self.values, $0) }, self.position)
 	}
-	
+
 	public func extend<B>(f : ArrayZipper<A> -> B) -> ArrayZipper<B> {
 		return ArrayZipper<B>((0 ..< self.values.count).map { f(ArrayZipper(self.values, $0)) }, self.position)
 	}
