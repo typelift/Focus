@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11737AAD1B9137CA00C4315B /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11D137051B544D0000E76EBA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
 		11D137061B544D0000E76EBA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
 		824B45F91B460AC1009AAF49 /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -290,6 +291,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11737AAD1B9137CA00C4315B /* Focus.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
