@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/typelift/Focus.svg?branch=master)](https://travis-ci.org/typelift/Focus)
+
 # Focus
 Focus is an Optics library for Swift (where Optics includes `Lens`, `Prism`s, and `Iso`s) that is
 inspired by Haskell's [Lens](https://github.com/ekmett/lens) library.
