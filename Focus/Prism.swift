@@ -6,7 +6,26 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// A Prism is an `Iso` where one of the functions is partial.
+/// A `Prism` describes a way of focusing on potentially more than one target structure.  Like
+/// an `Iso` a `Prism` is invertible, but unlike an `Iso` multi-focus `Prism`s are incompatible with
+/// inversion in general.  Because of this a `Prism` describes a `Lens` that can branch depending on
+/// whether it hits its target, much like pattern-matching in a `switch` statement.
+///
+///
+/// An famous example of a `Prism` is
+///
+///     Prism<Optional<T>, Optional<T>, T, T>
+///
+/// provided by the `_Some` and `_None` `Prism`s in this library.
+///
+/// In practice, a `Prism` is used with Sum structures like enums. If a less-powerful form of 
+/// `Prism` is needed, or `S == T` and `A == B`, consider using a `SimplePrism` instead.
+///
+/// A Prism can thought of as an `Iso` characterized by two functions (where one of the functions is
+/// partial):
+///
+/// - `tryGet` to possibly retrieve a focused part of the structure.
+/// - `inject` to perform a "reverse get" back to a modified form of the original structure.
 ///
 /// - parameter S: The source of the Prism
 /// - parameter T: The modified source of the Prism
@@ -26,10 +45,12 @@ public struct Prism<S, T, A, B> : PrismType {
 		_inject = g
 	}
 
+	/// Attempts to focus the prism on the given source.
 	public func tryGet(v : Source) -> Target? {
 		return _tryGet(v)
 	}
 
+	/// Injects a value back into a modified form of the original structure.
 	public func inject(x : AltTarget) -> AltSource {
 		return _inject(x)
 	}

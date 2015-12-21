@@ -6,12 +6,20 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// A Lens (or Functional Reference) describes a way of focusing on the parts of a structure,
+/// A `Lens` (or Functional Reference) describes a way of focusing on the parts of a structure,
 /// composing with other lenses to focus deeper into a structure, and returning new structures with
-/// parts modified.  In this way, a Lens can be thought of as a reference to a subpart of a
+/// parts modified.  In this way, a `Lens` can be thought of as a reference to a subpart of a
 /// structure.
 ///
-/// A well-behaved Lens should obey the following laws:
+/// In practice, a `Lens` is used with Product structures like tuples, and classes. If a less-
+/// powerful form of `Lens` is needed, consider using a `SimpleLens` instead.
+///
+/// A Lens, its is simplest form, can also be seen as a pair of functions:
+/// 
+/// - `get` to retrieve a focused part of the structure.
+/// - `set` to replace focused parts and yield a new modified structure.
+///
+/// A well-behaved `Lens` should obey the following laws:
 ///
 /// - You get back what you put in:
 ///
@@ -25,10 +33,10 @@
 ///
 ///     l.set(l.set(s, a), b) == l.set(s, b)
 ///
-/// - parameter S: The source of the Lens
-/// - parameter T: The modified source of the Lens
-/// - parameter A: The target of the Lens
-/// - parameter B: The modified target the Lens
+/// - parameter S: The structure to be focused.
+/// - parameter T: The modified form of the structure.
+/// - parameter A: The result of retrieving the focused subpart.
+/// - parameter B: The modification to make to the original structure.
 public struct Lens<S, T, A, B> : LensType {
 	public typealias Source = S
 	public typealias Target = A
@@ -38,11 +46,12 @@ public struct Lens<S, T, A, B> : LensType {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	private let _run : S -> IxStore<A, B, T>
 
+	/// Runs the lens on a structure to retrieve the underlying Indexed Costate Comonad Coalgebroid.
 	public func run(v : S) -> IxStore<A, B, T> {
 		return _run(v)
 	}
 
-	/// Produces a lens from an Indexed Costate Comonad Coalgebroid.
+	/// Produces a lens from a function yielding an Indexed Costate Comonad Coalgebroid.
 	public init(_ f : S -> IxStore<A, B, T>) {
 		_run = f
 	}
@@ -58,6 +67,7 @@ public struct Lens<S, T, A, B> : LensType {
 	}
 }
 
+/// Captures the essential structure of a Lens.
 public protocol LensType : OpticFamilyType {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	func run(_ : Source) -> IxStore<Target, AltTarget, AltSource>
@@ -110,7 +120,7 @@ extension LensType {
 		}
 	}
 
-	/// Creates a Lens that focuses on two structures.
+	/// Creates a `Lens` that focuses on two structures.
 	public func split<Other : LensType>(right : Other) -> Lens<
 		(Source, Other.Source), (AltSource, Other.AltSource),
 		(Target, Other.Target), (AltTarget, Other.AltTarget)>
@@ -122,7 +132,7 @@ extension LensType {
 		}
 	}
 
-	/// Creates a Lens that sends its input structure to both Lenses to focus on distinct subparts.
+	/// Creates a `Lens` that sends its input structure to both Lenses to focus on distinct subparts.
 	public func fanout<Other : LensType
 		where Source == Other.Source, AltTarget == Other.AltTarget>
 		(right : Other) -> Lens<Source, (AltSource, Other.AltSource), (Target, Other.Target), AltTarget>
@@ -135,6 +145,10 @@ extension LensType {
 	}
 }
 
+/// Composes two lenses to yield a "more focused" lens.
+///
+/// `Lens` composition occurs like property notation, in that more specific lenses come last rather
+/// than first as they would under traditional function composition.
 public func • <Left : LensType, Right : LensType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>

@@ -6,12 +6,21 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// Captures an isomorphism between S and A.
+/// Captures an isomorphism between S, A and B, T.
 ///
-/// - parameter S: The source of the Iso heading right
-/// - parameter T: The target of the Iso heading left
-/// - parameter A: The source of the Iso heading right
-/// - parameter B: The target of the Iso heading left
+/// In practice, an Iso is used with two structures that can be converted between each other without
+/// information loss.  For example, the Isomorphism between `Optional<T>` and `CollectionOfOne<T?>`
+/// is expressed as
+///
+///     Iso<Optional<T>, Optional<U>, CollectionOfOne<T?>, CollectionOfOne<U>>
+///
+/// If a less-powerful form of `Iso` is needed, or `S == T` and `A == B`, consider using a 
+/// `SimpleIso` instead.
+///
+/// - parameter S: The source of the first function of the isomorphism.
+/// - parameter T: The target of the second function of the isomorphism.
+/// - parameter A: The target of the first function of the isomorphism.
+/// - parameter B: The source of the second function of the isomorphism.
 public struct Iso<S, T, A, B> : IsoType {
 	public typealias Source = S
 	public typealias Target = A
@@ -27,15 +36,32 @@ public struct Iso<S, T, A, B> : IsoType {
 		_inject = g
 	}
 
+	/// Extracts the first function from the isomorphism.
 	public func get(v : S) -> A {
 		return _get(v)
 	}
 
+	/// Extracts the second function from the isomorphism.
 	public func inject(x : B) -> T {
 		return _inject(x)
 	}
+
+	/// Extracts the two functions that characterize the receiving `Iso`.
+	public func withIso<R>(k : ((S -> A), (B -> T)) -> R) -> R {
+		return k(self.get, self.inject)
+	}
+
+	/// Returns the inverse `Iso` from the receiver.
+	///
+	/// self.invert.invert == self
+	public var invert : Iso<B, A, T, S> {
+		return self.withIso { sa, bt in
+			return Iso<B, A, T, S>(get: bt, inject: sa)
+		}
+	}
 }
 
+/// Captures the essential structure of an `Iso`.
 public protocol IsoType : OpticFamilyType, LensType, PrismType {
 	func get(_ : Source) -> Target
 	func inject(_ : AltTarget) -> AltSource
@@ -62,6 +88,7 @@ extension IsoType {
 		}
 	}
 
+	/// An `Iso`'s `tryGet` will always succeed.
 	public func tryGet(v : Source) -> Target? {
 		return get(v)
 	}
