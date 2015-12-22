@@ -11,7 +11,6 @@
 /// inversion in general.  Because of this a `Prism` describes a `Lens` that can branch depending on
 /// whether it hits its target, much like pattern-matching in a `switch` statement.
 ///
-///
 /// An famous example of a `Prism` is
 ///
 ///     Prism<Optional<T>, Optional<T>, T, T>

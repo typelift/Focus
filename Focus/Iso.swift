@@ -45,20 +45,6 @@ public struct Iso<S, T, A, B> : IsoType {
 	public func inject(x : B) -> T {
 		return _inject(x)
 	}
-
-	/// Extracts the two functions that characterize the receiving `Iso`.
-	public func withIso<R>(k : ((S -> A), (B -> T)) -> R) -> R {
-		return k(self.get, self.inject)
-	}
-
-	/// Returns the inverse `Iso` from the receiver.
-	///
-	/// self.invert.invert == self
-	public var invert : Iso<B, A, T, S> {
-		return self.withIso { sa, bt in
-			return Iso<B, A, T, S>(get: bt, inject: sa)
-		}
-	}
 }
 
 /// Captures the essential structure of an `Iso`.
@@ -105,6 +91,20 @@ extension IsoType {
 		(other : Other) -> Iso<Source, AltSource, Other.Target, Other.AltTarget>
 	{
 		return Iso(get: other.get • self.get, inject: self.inject • other.inject)
+	}
+
+	/// Extracts the two functions that characterize the receiving `Iso`.
+	public func withIso<R>(k : ((Source -> Target), (AltTarget -> AltSource)) -> R) -> R {
+		return k(self.get, self.inject)
+	}
+
+	/// Returns the inverse `Iso` from the receiver.
+	///
+	/// self.invert.invert == self
+	public var invert : Iso<AltTarget, Target, AltSource, Source> {
+		return self.withIso { sa, bt in
+			return Iso<AltTarget, Target, AltSource, Source>(get: bt, inject: sa)
+		}
 	}
 }
 
