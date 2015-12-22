@@ -14,7 +14,7 @@
 /// In practice, a `Lens` is used with Product structures like tuples, classes, and structs. If a 
 /// less-powerful form of `Lens` is needed, consider using a `SimpleLens` instead.
 ///
-/// A Lens, its is simplest form, can also be seen as a pair of functions:
+/// A Lens, in its simplest form, can also be seen as a pair of functions:
 /// 
 /// - `get` to retrieve a focused part of the structure.
 /// - `set` to replace focused parts and yield a new modified structure.
@@ -51,7 +51,7 @@ public struct Lens<S, T, A, B> : LensType {
 		return _run(v)
 	}
 
-	/// Produces a lens from a function yielding an Indexed Costate Comonad Coalgebroid.
+	/// Produces a lens from an Indexed Costate Comonad Coalgebroid.
 	public init(_ f : S -> IxStore<A, B, T>) {
 		_run = f
 	}
