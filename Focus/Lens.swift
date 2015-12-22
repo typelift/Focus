@@ -11,8 +11,8 @@
 /// parts modified.  In this way, a `Lens` can be thought of as a reference to a subpart of a
 /// structure.
 ///
-/// In practice, a `Lens` is used with Product structures like tuples, and classes. If a less-
-/// powerful form of `Lens` is needed, consider using a `SimpleLens` instead.
+/// In practice, a `Lens` is used with Product structures like tuples, classes, and structs. If a 
+/// less-powerful form of `Lens` is needed, consider using a `SimpleLens` instead.
 ///
 /// A Lens, its is simplest form, can also be seen as a pair of functions:
 /// 
