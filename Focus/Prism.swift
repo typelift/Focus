@@ -75,7 +75,7 @@ public func _Some<A, B>() -> Prism<A?, B?, A, B> {
 }
 
 /// Provides a Prism for traversing `.None`.
-public func _None<A, B>() -> Prism<A?, B?, A, B> {
+public func _None<A>() -> Prism<A?, A?, (), ()> {
 	return Prism(tryGet: { _ in .None }, inject: { _ in .None })
 }
 
