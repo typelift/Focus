@@ -8,13 +8,13 @@
 
 /// Captures an isomorphism between S, A and B, T.
 ///
-/// In practice, an Iso is used with two structures that can be converted between each other without
-/// information loss.  For example, the Isomorphism between `Optional<T>` and `CollectionOfOne<T?>`
-/// is expressed as
+/// In practice, an `Iso` is used with two structures that can be converted between each other 
+/// without information loss.  For example, the Isomorphism between `Optional<T>` and 
+/// `ImplicitlyUnwrappedOptional<T>` is expressed as
 ///
-///     Iso<Optional<T>, Optional<U>, CollectionOfOne<T?>, CollectionOfOne<U>>
+///     Iso<Optional<T>, Optional<T>, ImplicitlyUnwrappedOptional<U>, ImplicitlyUnwrappedOptional<U>>
 ///
-/// If a less-powerful form of `Iso` is needed, or `S == T` and `A == B`, consider using a 
+/// If a less-powerful form of `Iso` is needed, where `S == T` and `A == B`, consider using a 
 /// `SimpleIso` instead.
 ///
 /// - parameter S: The source of the first function of the isomorphism.

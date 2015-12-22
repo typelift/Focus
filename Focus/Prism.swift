@@ -18,7 +18,7 @@
 /// provided by the `_Some` `Prism` in this library.
 ///
 /// In practice, a `Prism` is used with Sum structures like enums. If a less-powerful form of 
-/// `Prism` is needed, or `S == T` and `A == B`, consider using a `SimplePrism` instead.
+/// `Prism` is needed, where `S == T` and `A == B`, consider using a `SimplePrism` instead.
 ///
 /// A Prism can thought of as an `Iso` characterized by two functions (where one of the functions is
 /// partial):
