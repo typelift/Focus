@@ -10,6 +10,39 @@
 		11737AAD1B9137CA00C4315B /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11D137051B544D0000E76EBA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
 		11D137061B544D0000E76EBA /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
+		8240CE431C3A47AC00EF4D29 /* Focus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240CE391C3A47AC00EF4D29 /* Focus.framework */; };
+		8240CE521C3A47FA00EF4D29 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DD8ECF1B48D1CA00B66551 /* SwiftCheck.framework */; };
+		8240CE531C3A480400EF4D29 /* PartyExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B464A1B460E69009AAF49 /* PartyExample.swift */; };
+		8240CE541C3A480400EF4D29 /* UserExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B464B1B460E69009AAF49 /* UserExample.swift */; };
+		8240CE551C3A480400EF4D29 /* LensSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */; };
+		8240CE561C3A480400EF4D29 /* PrismSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE31B48DDB200B66551 /* PrismSpec.swift */; };
+		8240CE571C3A480400EF4D29 /* IsoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE61B48DF8700B66551 /* IsoSpec.swift */; };
+		8240CE581C3A480E00EF4D29 /* ArrayZipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46411B460BE2009AAF49 /* ArrayZipper.swift */; };
+		8240CE591C3A480E00EF4D29 /* LensOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46471B460C1E009AAF49 /* LensOperators.swift */; };
+		8240CE5A1C3A480E00EF4D29 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
+		8240CE5B1C3A480E00EF4D29 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
+		8240CE5C1C3A480E00EF4D29 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
+		8240CE5D1C3A480F00EF4D29 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46301B460B25009AAF49 /* Lens.swift */; };
+		8240CE5E1C3A480F00EF4D29 /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46311B460B25009AAF49 /* Prism.swift */; };
+		8240CE5F1C3A480F00EF4D29 /* Iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462B1B460B25009AAF49 /* Iso.swift */; };
+		8240CE601C3A480F00EF4D29 /* IxCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462C1B460B25009AAF49 /* IxCont.swift */; };
+		8240CE611C3A480F00EF4D29 /* IxMultiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462D1B460B25009AAF49 /* IxMultiStore.swift */; };
+		8240CE621C3A480F00EF4D29 /* IxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462E1B460B25009AAF49 /* IxState.swift */; };
+		8240CE631C3A480F00EF4D29 /* IxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462F1B460B25009AAF49 /* IxStore.swift */; };
+		8240CE641C3A481500EF4D29 /* ArrayZipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46411B460BE2009AAF49 /* ArrayZipper.swift */; };
+		8240CE651C3A481500EF4D29 /* LensOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46471B460C1E009AAF49 /* LensOperators.swift */; };
+		8240CE661C3A481500EF4D29 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
+		8240CE671C3A481500EF4D29 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
+		8240CE681C3A481500EF4D29 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
+		8240CE691C3A481500EF4D29 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46301B460B25009AAF49 /* Lens.swift */; };
+		8240CE6A1C3A481500EF4D29 /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46311B460B25009AAF49 /* Prism.swift */; };
+		8240CE6B1C3A481500EF4D29 /* Iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462B1B460B25009AAF49 /* Iso.swift */; };
+		8240CE6C1C3A481500EF4D29 /* IxCont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462C1B460B25009AAF49 /* IxCont.swift */; };
+		8240CE6D1C3A481500EF4D29 /* IxMultiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462D1B460B25009AAF49 /* IxMultiStore.swift */; };
+		8240CE6E1C3A481500EF4D29 /* IxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462E1B460B25009AAF49 /* IxState.swift */; };
+		8240CE6F1C3A481500EF4D29 /* IxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462F1B460B25009AAF49 /* IxStore.swift */; };
+		8240CE701C3A482200EF4D29 /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8240CE711C3A482700EF4D29 /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		824B45F91B460AC1009AAF49 /* Focus.h in Headers */ = {isa = PBXBuildFile; fileRef = 824B45F81B460AC1009AAF49 /* Focus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		824B46001B460AC1009AAF49 /* Focus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824B45F51B460AC1009AAF49 /* Focus.framework */; };
 		824B461E1B460AFA009AAF49 /* Focus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824B46141B460AFA009AAF49 /* Focus.framework */; };
@@ -51,6 +84,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8240CE2F1C3A47A500EF4D29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8240CCB11C3A123600EF4D29;
+			remoteInfo = "SwiftCheck-tvOS";
+		};
+		8240CE311C3A47A500EF4D29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8240CCBA1C3A123700EF4D29;
+			remoteInfo = "SwiftCheck-tvOSTests";
+		};
+		8240CE441C3A47AC00EF4D29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 824B45EC1B460AC1009AAF49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8240CE381C3A47AC00EF4D29;
+			remoteInfo = "Focus-tvOS";
+		};
+		8240CE501C3A47F600EF4D29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DD8EC71B48D1CA00B66551 /* SwiftCheck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8240CCB01C3A123600EF4D29;
+			remoteInfo = "SwiftCheck-tvOS";
+		};
 		824B46011B460AC1009AAF49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 824B45EC1B460AC1009AAF49 /* Project object */;
@@ -124,6 +185,9 @@
 
 /* Begin PBXFileReference section */
 		11D137041B544D0000E76EBA /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; usesTabs = 1; };
+		8240CE241C3A47A500EF4D29 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8240CE391C3A47AC00EF4D29 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8240CE421C3A47AC00EF4D29 /* Focus-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Focus-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		824B45F51B460AC1009AAF49 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824B45F81B460AC1009AAF49 /* Focus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Focus.h; path = Focus/Focus.h; sourceTree = "<group>"; usesTabs = 1; };
 		824B45FA1B460AC1009AAF49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +215,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8240CE201C3A47A500EF4D29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE351C3A47AC00EF4D29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE3F1C3A47AC00EF4D29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8240CE521C3A47FA00EF4D29 /* SwiftCheck.framework in Frameworks */,
+				8240CE431C3A47AC00EF4D29 /* Focus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824B45F11B460AC1009AAF49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,6 +290,9 @@
 				824B45FF1B460AC1009AAF49 /* FocusTests.xctest */,
 				824B46141B460AFA009AAF49 /* Focus.framework */,
 				824B461D1B460AFA009AAF49 /* Focus-iOSTests.xctest */,
+				8240CE241C3A47A500EF4D29 /* Focus.framework */,
+				8240CE391C3A47AC00EF4D29 /* Focus.framework */,
+				8240CE421C3A47AC00EF4D29 /* Focus-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +344,8 @@
 				82DD8ED11B48D1CA00B66551 /* SwiftCheckTests.xctest */,
 				82DD8ED31B48D1CA00B66551 /* SwiftCheck.framework */,
 				82DD8ED51B48D1CA00B66551 /* SwiftCheck-iOSTests.xctest */,
+				8240CE301C3A47A500EF4D29 /* SwiftCheck.framework */,
+				8240CE321C3A47A500EF4D29 /* SwiftCheck-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +371,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		8240CE211C3A47A500EF4D29 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8240CE711C3A482700EF4D29 /* Focus.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE361C3A47AC00EF4D29 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8240CE701C3A482200EF4D29 /* Focus.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824B45F21B460AC1009AAF49 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +406,61 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8240CE231C3A47A500EF4D29 /* Focus-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8240CE331C3A47A500EF4D29 /* Build configuration list for PBXNativeTarget "Focus-watchOS" */;
+			buildPhases = (
+				8240CE1F1C3A47A500EF4D29 /* Sources */,
+				8240CE201C3A47A500EF4D29 /* Frameworks */,
+				8240CE211C3A47A500EF4D29 /* Headers */,
+				8240CE221C3A47A500EF4D29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Focus-watchOS";
+			productName = "Focus-watchOS";
+			productReference = 8240CE241C3A47A500EF4D29 /* Focus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8240CE381C3A47AC00EF4D29 /* Focus-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8240CE4A1C3A47AD00EF4D29 /* Build configuration list for PBXNativeTarget "Focus-tvOS" */;
+			buildPhases = (
+				8240CE341C3A47AC00EF4D29 /* Sources */,
+				8240CE351C3A47AC00EF4D29 /* Frameworks */,
+				8240CE361C3A47AC00EF4D29 /* Headers */,
+				8240CE371C3A47AC00EF4D29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Focus-tvOS";
+			productName = "Focus-tvOS";
+			productReference = 8240CE391C3A47AC00EF4D29 /* Focus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8240CE411C3A47AC00EF4D29 /* Focus-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8240CE4D1C3A47AD00EF4D29 /* Build configuration list for PBXNativeTarget "Focus-tvOSTests" */;
+			buildPhases = (
+				8240CE3E1C3A47AC00EF4D29 /* Sources */,
+				8240CE3F1C3A47AC00EF4D29 /* Frameworks */,
+				8240CE401C3A47AC00EF4D29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8240CE511C3A47F600EF4D29 /* PBXTargetDependency */,
+				8240CE451C3A47AC00EF4D29 /* PBXTargetDependency */,
+			);
+			name = "Focus-tvOSTests";
+			productName = "Focus-tvOSTests";
+			productReference = 8240CE421C3A47AC00EF4D29 /* Focus-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		824B45F41B460AC1009AAF49 /* Focus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 824B46091B460AC1009AAF49 /* Build configuration list for PBXNativeTarget "Focus" */;
@@ -380,10 +543,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = TypeLift;
 				TargetAttributes = {
+					8240CE231C3A47A500EF4D29 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					8240CE381C3A47AC00EF4D29 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					8240CE411C3A47AC00EF4D29 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					824B45F41B460AC1009AAF49 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -420,11 +592,28 @@
 				824B45FE1B460AC1009AAF49 /* FocusTests */,
 				824B46131B460AFA009AAF49 /* Focus-iOS */,
 				824B461C1B460AFA009AAF49 /* Focus-iOSTests */,
+				8240CE381C3A47AC00EF4D29 /* Focus-tvOS */,
+				8240CE411C3A47AC00EF4D29 /* Focus-tvOSTests */,
+				8240CE231C3A47A500EF4D29 /* Focus-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8240CE301C3A47A500EF4D29 /* SwiftCheck.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftCheck.framework;
+			remoteRef = 8240CE2F1C3A47A500EF4D29 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8240CE321C3A47A500EF4D29 /* SwiftCheck-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftCheck-tvOSTests.xctest";
+			remoteRef = 8240CE311C3A47A500EF4D29 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		82DD8ECF1B48D1CA00B66551 /* SwiftCheck.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -456,6 +645,27 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8240CE221C3A47A500EF4D29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE371C3A47AC00EF4D29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE401C3A47AC00EF4D29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824B45F31B460AC1009AAF49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +697,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8240CE1F1C3A47A500EF4D29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8240CE641C3A481500EF4D29 /* ArrayZipper.swift in Sources */,
+				8240CE651C3A481500EF4D29 /* LensOperators.swift in Sources */,
+				8240CE661C3A481500EF4D29 /* Operators.swift in Sources */,
+				8240CE671C3A481500EF4D29 /* Protocols.swift in Sources */,
+				8240CE681C3A481500EF4D29 /* Monomorphic.swift in Sources */,
+				8240CE691C3A481500EF4D29 /* Lens.swift in Sources */,
+				8240CE6A1C3A481500EF4D29 /* Prism.swift in Sources */,
+				8240CE6B1C3A481500EF4D29 /* Iso.swift in Sources */,
+				8240CE6C1C3A481500EF4D29 /* IxCont.swift in Sources */,
+				8240CE6D1C3A481500EF4D29 /* IxMultiStore.swift in Sources */,
+				8240CE6E1C3A481500EF4D29 /* IxState.swift in Sources */,
+				8240CE6F1C3A481500EF4D29 /* IxStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE341C3A47AC00EF4D29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8240CE581C3A480E00EF4D29 /* ArrayZipper.swift in Sources */,
+				8240CE591C3A480E00EF4D29 /* LensOperators.swift in Sources */,
+				8240CE5A1C3A480E00EF4D29 /* Operators.swift in Sources */,
+				8240CE5B1C3A480E00EF4D29 /* Protocols.swift in Sources */,
+				8240CE5C1C3A480E00EF4D29 /* Monomorphic.swift in Sources */,
+				8240CE5D1C3A480F00EF4D29 /* Lens.swift in Sources */,
+				8240CE5E1C3A480F00EF4D29 /* Prism.swift in Sources */,
+				8240CE5F1C3A480F00EF4D29 /* Iso.swift in Sources */,
+				8240CE601C3A480F00EF4D29 /* IxCont.swift in Sources */,
+				8240CE611C3A480F00EF4D29 /* IxMultiStore.swift in Sources */,
+				8240CE621C3A480F00EF4D29 /* IxState.swift in Sources */,
+				8240CE631C3A480F00EF4D29 /* IxStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8240CE3E1C3A47AC00EF4D29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8240CE531C3A480400EF4D29 /* PartyExample.swift in Sources */,
+				8240CE541C3A480400EF4D29 /* UserExample.swift in Sources */,
+				8240CE551C3A480400EF4D29 /* LensSpec.swift in Sources */,
+				8240CE561C3A480400EF4D29 /* PrismSpec.swift in Sources */,
+				8240CE571C3A480400EF4D29 /* IsoSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824B45F01B460AC1009AAF49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,6 +812,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8240CE451C3A47AC00EF4D29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8240CE381C3A47AC00EF4D29 /* Focus-tvOS */;
+			targetProxy = 8240CE441C3A47AC00EF4D29 /* PBXContainerItemProxy */;
+		};
+		8240CE511C3A47F600EF4D29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftCheck-tvOS";
+			targetProxy = 8240CE501C3A47F600EF4D29 /* PBXContainerItemProxy */;
+		};
 		824B46021B460AC1009AAF49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 824B45F41B460AC1009AAF49 /* Focus */;
@@ -575,6 +845,119 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8240CE291C3A47A500EF4D29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Focus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-watchOS";
+				PRODUCT_NAME = Focus;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		8240CE2A1C3A47A500EF4D29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Focus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-watchOS";
+				PRODUCT_NAME = Focus;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		8240CE4B1C3A47AD00EF4D29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Focus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOS";
+				PRODUCT_NAME = Focus;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		8240CE4C1C3A47AD00EF4D29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Focus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOS";
+				PRODUCT_NAME = Focus;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8240CE4E1C3A47AD00EF4D29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FocusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		8240CE4F1C3A47AD00EF4D29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FocusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		824B46071B460AC1009AAF49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -801,6 +1184,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8240CE331C3A47A500EF4D29 /* Build configuration list for PBXNativeTarget "Focus-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8240CE291C3A47A500EF4D29 /* Debug */,
+				8240CE2A1C3A47A500EF4D29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8240CE4A1C3A47AD00EF4D29 /* Build configuration list for PBXNativeTarget "Focus-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8240CE4B1C3A47AD00EF4D29 /* Debug */,
+				8240CE4C1C3A47AD00EF4D29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8240CE4D1C3A47AD00EF4D29 /* Build configuration list for PBXNativeTarget "Focus-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8240CE4E1C3A47AD00EF4D29 /* Debug */,
+				8240CE4F1C3A47AD00EF4D29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		824B45EF1B460AC1009AAF49 /* Build configuration list for PBXProject "Focus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
