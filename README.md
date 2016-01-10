@@ -28,7 +28,7 @@ The easiest way to explain a lens is with a pair of functions
 
 ```swift
 func get(structure : S) -> A
-func set(pair : (oldStruct : S, newValue : A)) -> S
+func set(pair : (self : S, newValue : A)) -> S
 ```
 
 This should look quite familiar to you!  After all, Swift includes
