@@ -172,7 +172,12 @@ We've only scratched the surface of the power of Lenses, and we
 haven't even touched the other members of the family of optics
 exported by Focus.
 
-Setup
-=====
+System Requirements
+===================
 
-SwiftCheck can be included one of two ways:
+Focus supports OS X 10.9+ and iOS 8.0+.
+
+License
+=======
+
+Focus is released under the MIT license.
