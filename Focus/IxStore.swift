@@ -6,12 +6,13 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// An `IxStore` models a store of variables of type `A` each at an index of type `I`.  Unlike the
-/// Costate Comonad, `IxStore`'s position is indexed by a type `O`.
+/// An `IxStore` models a store of variables of type `A` each at an index of 
+/// type `I`.  Unlike the Costate Comonad, `IxStore`'s position is indexed by a 
+/// type `O`.
 ///
-/// N.B.:  In the indexed store comonad transformer, set, put, and peek are all distinct,
-/// as are puts and peeks.  The lack of distinction here is due to the lack of transformer
-/// nature; as soon as we get transformers, that will change.
+/// N.B.:  In the indexed store comonad transformer, set, put, and peek are all
+/// distinct, as are puts and peeks.  The lack of distinction here is due to the
+/// lack of transformer nature; as soon as we get transformers, that will change.
 public struct IxStore<O, I, A> {
 	/// The current position of the receiver.
 	let pos : O

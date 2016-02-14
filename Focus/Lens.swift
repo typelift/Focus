@@ -6,13 +6,14 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// A `Lens` (or Functional Reference) describes a way of focusing on the parts of a structure,
-/// composing with other lenses to focus deeper into a structure, and returning new structures with
-/// parts modified.  In this way, a `Lens` can be thought of as a reference to a subpart of a
-/// structure.
+/// A `Lens` (or Functional Reference) describes a way of focusing on the parts 
+/// of a structure, composing with other lenses to focus deeper into a 
+/// structure, and returning new structures with parts modified.  In this way, a
+/// `Lens` can be thought of as a reference to a subpart of a structure.
 ///
-/// In practice, a `Lens` is used with Product structures like tuples, classes, and structs. If a 
-/// less-powerful form of `Lens` is needed, consider using a `SimpleLens` instead.
+/// In practice, a `Lens` is used with Product structures like tuples, classes, 
+/// and structs. If a less-powerful form of `Lens` is needed, consider using a 
+/// `SimpleLens` instead.
 ///
 /// A Lens, in its simplest form, can also be seen as a pair of functions:
 /// 
@@ -46,7 +47,8 @@ public struct Lens<S, T, A, B> : LensType {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
 	private let _run : S -> IxStore<A, B, T>
 
-	/// Runs the lens on a structure to retrieve the underlying Indexed Costate Comonad Coalgebroid.
+	/// Runs the lens on a structure to retrieve the underlying Indexed Costate 
+	/// Comonad Coalgebroid.
 	public func run(v : S) -> IxStore<A, B, T> {
 		return _run(v)
 	}
@@ -61,7 +63,8 @@ public struct Lens<S, T, A, B> : LensType {
 		self.init({ v in IxStore(get(v)) { set(v, $0) } })
 	}
 
-	/// Creates a lens that transforms set values by a given function before they are returned.
+	/// Creates a lens that transforms set values by a given function before 
+	/// they are returned.
 	public init(get : S -> A, modify : (S, A -> B) -> T) {
 		self.init(get: get, set: { v, x in modify(v) { _ in x } })
 	}
@@ -132,7 +135,8 @@ extension LensType {
 		}
 	}
 
-	/// Creates a `Lens` that sends its input structure to both Lenses to focus on distinct subparts.
+	/// Creates a `Lens` that sends its input structure to both Lenses to focus 
+	/// on distinct subparts.
 	public func fanout<Other : LensType
 		where Source == Other.Source, AltTarget == Other.AltTarget>
 		(right : Other) -> Lens<Source, (AltSource, Other.AltSource), (Target, Other.Target), AltTarget>
@@ -147,8 +151,9 @@ extension LensType {
 
 /// Composes two lenses to yield a "more focused" lens.
 ///
-/// `Lens` composition occurs like property notation, in that more specific lenses come last rather
-/// than first as they would under traditional function composition.
+/// `Lens` composition occurs like property notation, in that more specific 
+/// lenses come last rather than first as they would under traditional function 
+/// composition.
 public func • <Left : LensType, Right : LensType where
 	Left.Target == Right.Source,
 	Left.AltTarget == Right.AltSource>

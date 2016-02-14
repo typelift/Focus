@@ -30,7 +30,7 @@ public struct Iso<S, T, A, B> : IsoType {
 	private let _get : S -> A
 	private let _inject : B -> T
 
-	/// Builds an Iso from a pair of inverse functions.
+	/// Builds an `Iso` from a pair of inverse functions.
 	public init(get f : S -> A, inject g : B -> T) {
 		_get = f
 		_inject = g
