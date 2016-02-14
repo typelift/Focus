@@ -1,28 +1,34 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Build Status](https://travis-ci.org/typelift/Focus.svg?branch=master)](https://travis-ci.org/typelift/Focus) 
+[![Build Status](https://travis-ci.org/typelift/Focus.svg?branch=master)](https://travis-ci.org/typelift/Focus)
 [![Gitter chat](https://badges.gitter.im/DPVN/chat.png)](https://gitter.im/typelift/general?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 
-# Focus
+Focus
+=====
+
 Focus is an Optics library for Swift (where Optics includes `Lens`,
 `Prism`s, and `Iso`s) that is inspired by Haskell's
 [Lens](https://github.com/ekmett/lens) library.
 
-#Introduction
+Introduction
+============
 
 Focus exports a number of primitives that make it easy to establish
 *relations* between types.  Practically, a relation can be thought of
 as a particular way of viewing and modifying a structure.  The most
 famous of these is a `Lens` or Functional Reference.  While there are
 an abundance of representations of a Lens (see
-[van Laarhoven 09](http://www.twanvl.nl/blog/haskell/cps-functional-references),
-[Kmett et al. 12](http://lens.github.io),
-[Eidhof et al. 09](https://hackage.haskell.org/package/fclabels), we
-have chosen a data-lens-like implementation using the Indexed Store
-Comonad.  If all of that makes no sense, don't worry!  We have hidden
-all of this behind a simple interface.
+[[van Laarhoven 09](http://www.twanvl.nl/blog/haskell/cps-functional-references)],
+[[Kmett et al. 12](http://lens.github.io)],
+[[Eidhof et al. 09](https://hackage.haskell.org/package/fclabels)], we
+have chosen a
+[data-lens](https://hackage.haskell.org/package/data-lens)-like
+implementation using the Indexed Store Comonad.  If all of that makes
+no sense, don't worry!  We have hidden all of this behind a simple
+interface.
 
-#Programming With Lenses
+Programming With Lenses
+=======================
 
 The easiest way to explain a lens is with a pair of functions
 
@@ -56,6 +62,9 @@ All of these properties, flexibility immutability, and composability,
 come together to enable a powerful set of operations that allow the
 programmer to view a structure and its parts at any depth and any
 angle, not simply those provided by properties.
+
+Practical Lenses
+================
 
 For example, say we have this set of structures for working with a
 flight tracking app:
@@ -96,7 +105,12 @@ struct BoardingPass {
 Starting with a `BoardingPass`, getting our flight status is trivial
 
 ```swift
-let pass = BoardingPass(/**/)
+let plane = Plane(model: "SpaceX Raptor", freeSeats: 4, takenSeats: 0, status: .OnTime)
+let gate = Gate(number: 1, letter: "A")
+let pass = BoardingPass(plane: plane
+					, gate: gate
+					, departureDate: NSDate.distantFuture()
+					, arrivalDate: NSDate.distantFuture())
 let status = pass.plane.status
 ```
 
@@ -104,8 +118,8 @@ However, in order to update the status on the boarding pass without
 lenses, we'd have to go through this rigamarole every time:
 
 ```swift
-let oldPass = BoardingPass(/**/)
-// Apparently, we're flying Southwest
+let oldPass = BoardingPass(/* */)
+// Apparently, we're actually flying Allegiant
 let newFlight = Plane(model: oldPass.plane.model
 					, freeSeats: oldPass.plane.freeSeats
 					, takenSeats: oldPass.plane.takenSeats
@@ -153,13 +167,12 @@ extension Plane {
 }
 ```
 
-#Practical Lenses
-
-With an optics library in hand, not only can we recreate traditional
-object-oriented setter-getter behavior, we can extract the more
-abstract properties of structures and compose them together to enable
-wondrously declarative drills into deeply nested structures.
 
 We've only scratched the surface of the power of Lenses, and we
 haven't even touched the other members of the family of optics
 exported by Focus.
+
+Setup
+=====
+
+SwiftCheck can be included one of two ways:
