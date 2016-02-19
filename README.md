@@ -71,6 +71,7 @@ flight tracking app:
 
 ```swift
 import Foundation
+import Focus
 
 enum Status {
 	case Early
@@ -171,6 +172,16 @@ extension Plane {
 We've only scratched the surface of the power of Lenses, and we
 haven't even touched the other members of the family of optics
 exported by Focus.
+
+Further Reading
+===============
+
+- The [Lens Library](http://lens.github.io)'s website.
+- [Aditya Bhargava](http://adit.io/posts/2013-07-22-lenses-in-pictures.html)'s marvelous illustrated guide to lenses.
+- [Haskell for All](http://www.haskellforall.com/2013/05/program-imperatively-using-haskell.html) Gabriel Gonzalez explains how to program imperatively using lenses
+- [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.41.125).
+- Edward Kmett's talk on [Lenses, Folds, and Traversals](https://www.youtube.com/watch?v=cefnmjtAolY).
+- In fact, pretty much everything [Edward Kmett](https://www.youtube.com/user/edwardkmett/videos) has talked about.
 
 System Requirements
 ===================
