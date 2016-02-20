@@ -6,6 +6,7 @@
 //  Copyright © 2015 TypeLift. All rights reserved.
 //
 
+/// A `SimpleLens` is a `Lens` where the sources and targets a
 public struct SimpleLens<S, A> : LensType {
 	public typealias Source = S
 	public typealias Target = A

@@ -1191,6 +1191,7 @@
 				8240CE2A1C3A47A500EF4D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8240CE4A1C3A47AD00EF4D29 /* Build configuration list for PBXNativeTarget "Focus-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -1199,6 +1200,7 @@
 				8240CE4C1C3A47AD00EF4D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8240CE4D1C3A47AD00EF4D29 /* Build configuration list for PBXNativeTarget "Focus-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1207,6 +1209,7 @@
 				8240CE4F1C3A47AD00EF4D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		824B45EF1B460AC1009AAF49 /* Build configuration list for PBXProject "Focus" */ = {
 			isa = XCConfigurationList;

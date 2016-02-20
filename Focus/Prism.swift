@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
-/// A `Prism` describes a way of focusing on potentially more than one target structure.  Like
-/// an `Iso` a `Prism` is invertible, but unlike an `Iso` multi-focus `Prism`s are incompatible with
-/// inversion in general.  Because of this a `Prism` can branch depending on whether it hits its 
-/// target, much like pattern-matching in a `switch` statement.
+/// A `Prism` describes a way of focusing on potentially more than one target 
+/// structure.  Like an `Iso` a `Prism` is invertible, but unlike an `Iso` 
+/// multi-focus `Prism`s are incompatible with inversion in general.  Because of
+/// this a `Prism` can branch depending on whether it hits its  target, much 
+/// like pattern-matching in a `switch` statement.
 ///
 /// An famous example of a `Prism` is
 ///
@@ -17,14 +18,16 @@
 ///
 /// provided by the `_Some` `Prism` in this library.
 ///
-/// In practice, a `Prism` is used with Sum structures like enums. If a less-powerful form of 
-/// `Prism` is needed, where `S == T` and `A == B`, consider using a `SimplePrism` instead.
+/// In practice, a `Prism` is used with Sum structures like enums. If a less
+/// powerful form of `Prism` is needed, where `S == T` and `A == B`, consider 
+/// using a `SimplePrism` instead.
 ///
-/// A Prism can thought of as an `Iso` characterized by two functions (where one of the functions is
-/// partial):
+/// A Prism can thought of as an `Iso` characterized by two functions (where one
+/// of the functions is partial):
 ///
 /// - `tryGet` to possibly retrieve a focused part of the structure.
-/// - `inject` to perform a "reverse get" back to a modified form of the original structure.
+/// - `inject` to perform a "reverse get" back to a modified form of the 
+///   original structure.
 ///
 /// - parameter S: The source of the Prism
 /// - parameter T: The modified source of the Prism
@@ -88,9 +91,9 @@ extension PrismType {
 			return Prism(tryGet: { self.tryGet($0).flatMap(other.tryGet) }, inject: self.inject • other.inject)
 	}
 
-	/// Attempts to run a value of type `S` along both parts of the Prism.  If `.None` is
-	/// encountered along the getter returns `.None`, else returns `.Some` containing the final
-	/// value.
+	/// Attempts to run a value of type `S` along both parts of the Prism.  If 
+	/// `.None` is encountered along the getter returns `.None`, else returns 
+	/// `.Some` containing the final value.
 	public func tryModify(s : Source, _ f : Target -> AltTarget) -> AltSource? {
 		return tryGet(s).map(self.inject • f)
 	}

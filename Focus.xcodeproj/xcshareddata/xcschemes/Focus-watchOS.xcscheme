@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8240CE231C3A47A500EF4D29"
-               BuildableName = "Focus-watchOS.framework"
+               BuildableName = "Focus.framework"
                BlueprintName = "Focus-watchOS"
                ReferencedContainer = "container:Focus.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8240CE231C3A47A500EF4D29"
-            BuildableName = "Focus-watchOS.framework"
+            BuildableName = "Focus.framework"
             BlueprintName = "Focus-watchOS"
             ReferencedContainer = "container:Focus.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8240CE231C3A47A500EF4D29"
-            BuildableName = "Focus-watchOS.framework"
+            BuildableName = "Focus.framework"
             BlueprintName = "Focus-watchOS"
             ReferencedContainer = "container:Focus.xcodeproj">
          </BuildableReference>
