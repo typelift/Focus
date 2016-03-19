@@ -45,6 +45,12 @@ extension SimpleLens {
 	}
 }
 
+extension SimpleLens : SetterType {
+	public func over(f: A -> A) -> S -> S {
+		return { s in self.modify(s, f) }
+	}
+}
+
 public struct SimpleIso<S, A> : IsoType {
 	public typealias Source = S
 	public typealias Target = A
@@ -110,4 +116,34 @@ extension SimplePrism {
 	}
 }
 
+extension SimplePrism : SetterType {
+	public func over(f: A -> A) -> S -> S {
+		return { s in self.tryModify(s, f) ?? s }
+	}
+}
 
+public struct SimpleSetter<S, A> : SetterType {
+	public typealias Source = S
+	public typealias Target = A
+	public typealias AltSource = S
+	public typealias AltTarget = A
+
+	private let _over : (A -> A) -> S -> S
+
+	public init(over: (A -> A) -> S -> S) {
+		self._over = over
+	}
+
+	public func over(f : A -> A) -> S -> S {
+		return _over(f)
+	}
+}
+
+extension SimpleSetter {
+	public init<Other : SetterType where
+		S == Other.Source, A == Other.Target, S == Other.AltSource, A == Other.AltTarget>
+		(_ other : Other)
+	{
+		self.init(over: other.over)
+	}
+}

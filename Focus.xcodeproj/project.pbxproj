@@ -81,6 +81,8 @@
 		82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
 		82E93EB11B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
 		82E93EB21B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
+		BCDCF0B51C9CBA1F0082BF07 /* SetterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */; };
+		BCDCF0B71C9CBA6D0082BF07 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +214,8 @@
 		82DD8EE61B48DF8700B66551 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82DD8EFC1B4CE0E600B66551 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
 		82E93EB01B8A7907003D5798 /* Monomorphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monomorphic.swift; sourceTree = "<group>"; usesTabs = 1; };
+		BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetterSpec.swift; sourceTree = "<group>"; };
+		BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +309,7 @@
 				82DD8EFC1B4CE0E600B66551 /* Operators.swift */,
 				11D137041B544D0000E76EBA /* Protocols.swift */,
 				82E93EB01B8A7907003D5798 /* Monomorphic.swift */,
+				BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */,
 				824B46301B460B25009AAF49 /* Lens.swift */,
 				824B46311B460B25009AAF49 /* Prism.swift */,
 				824B462B1B460B25009AAF49 /* Iso.swift */,
@@ -321,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				82DD8EDD1B48D21500B66551 /* Examples */,
+				BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */,
 				82DD8EDE1B48D2EB00B66551 /* LensSpec.swift */,
 				82DD8EE31B48DDB200B66551 /* PrismSpec.swift */,
 				82DD8EE61B48DF8700B66551 /* IsoSpec.swift */,
@@ -751,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDCF0B71C9CBA6D0082BF07 /* Setter.swift in Sources */,
 				824B46361B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463E1B460B25009AAF49 /* Prism.swift in Sources */,
@@ -773,6 +780,7 @@
 				82DD8EE41B48DDB200B66551 /* PrismSpec.swift in Sources */,
 				82DD8EDF1B48D2EB00B66551 /* LensSpec.swift in Sources */,
 				82DD8EE71B48DF8700B66551 /* IsoSpec.swift in Sources */,
+				BCDCF0B51C9CBA1F0082BF07 /* SetterSpec.swift in Sources */,
 				824B464C1B460E69009AAF49 /* PartyExample.swift in Sources */,
 				824B464E1B460E69009AAF49 /* UserExample.swift in Sources */,
 			);
