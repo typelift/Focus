@@ -83,6 +83,11 @@
 		82E93EB21B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
 		BCDCF0B51C9CBA1F0082BF07 /* SetterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */; };
 		BCDCF0B71C9CBA6D0082BF07 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */; };
+		BCE500E51C9E2603008573A0 /* SetterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */; };
+		BCE500E91C9E2604008573A0 /* SetterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */; };
+		BCE500EA1C9E260E008573A0 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */; };
+		BCE500EB1C9E260F008573A0 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */; };
+		BCE500EC1C9E2610008573A0 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -707,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE500EC1C9E2610008573A0 /* Setter.swift in Sources */,
 				8240CE641C3A481500EF4D29 /* ArrayZipper.swift in Sources */,
 				8240CE651C3A481500EF4D29 /* LensOperators.swift in Sources */,
 				8240CE661C3A481500EF4D29 /* Operators.swift in Sources */,
@@ -726,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE500EB1C9E260F008573A0 /* Setter.swift in Sources */,
 				8240CE581C3A480E00EF4D29 /* ArrayZipper.swift in Sources */,
 				8240CE591C3A480E00EF4D29 /* LensOperators.swift in Sources */,
 				8240CE5A1C3A480E00EF4D29 /* Operators.swift in Sources */,
@@ -748,6 +755,7 @@
 				8240CE531C3A480400EF4D29 /* PartyExample.swift in Sources */,
 				8240CE541C3A480400EF4D29 /* UserExample.swift in Sources */,
 				8240CE551C3A480400EF4D29 /* LensSpec.swift in Sources */,
+				BCE500E91C9E2604008573A0 /* SetterSpec.swift in Sources */,
 				8240CE561C3A480400EF4D29 /* PrismSpec.swift in Sources */,
 				8240CE571C3A480400EF4D29 /* IsoSpec.swift in Sources */,
 			);
@@ -790,6 +798,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE500EA1C9E260E008573A0 /* Setter.swift in Sources */,
 				824B46371B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463F1B460B25009AAF49 /* Prism.swift in Sources */,
@@ -812,6 +821,7 @@
 				82DD8EE51B48DDB200B66551 /* PrismSpec.swift in Sources */,
 				82DD8EE01B48D2EB00B66551 /* LensSpec.swift in Sources */,
 				82DD8EE81B48DF8700B66551 /* IsoSpec.swift in Sources */,
+				BCE500E51C9E2603008573A0 /* SetterSpec.swift in Sources */,
 				824B464D1B460E69009AAF49 /* PartyExample.swift in Sources */,
 				824B464F1B460E69009AAF49 /* UserExample.swift in Sources */,
 			);
