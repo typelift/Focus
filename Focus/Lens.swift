@@ -85,6 +85,12 @@ extension Lens {
 	}
 }
 
+extension Lens : SetterType {
+	public func over(f: A -> B) -> S -> T {
+		return { s in self.modify(s, f) }
+	}
+}
+
 extension LensType {
 	/// Runs the getter on a given structure.
 	public func get(v : Source) -> Target {
