@@ -1,9 +1,9 @@
 language: objective-c
-osx_image: xcode7.2
+osx_image: xcode7.3
 before_install: true
 install: true
 script:
-  - script/cibuild Focus Focus-iOS
+  - script/cibuild Focus 
   - xcodebuild test -scheme Focus-tvOS -destination 'platform=tvOS Simulator,name=Apple TV 1080p'
   - xcodebuild build -scheme Focus-watchOS -destination 'platform=watchOS Simulator,name=Apple Watch - 42mm'
   
