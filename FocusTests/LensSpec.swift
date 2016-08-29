@@ -78,12 +78,12 @@ func == <T : Equatable, U : Equatable>(l : (T, U), r : (T, U)) -> Bool {
 	return l.0 == r.0 && l.1 == r.1
 }
 
-func uncurry<A, B, C>(f : A -> B -> C) -> (A, B) -> C {
+func uncurry<A, B, C>(_ f : @escaping (A) -> (B) -> C) -> (A, B) -> C {
 	return { t in f(t.0)(t.1) }
 }
 
 
-func • <A, B, C>(f : B -> C, g: A -> B) -> A -> C {
+func • <A, B, C>(f : @escaping (B) -> C, g: @escaping (A) -> B) -> (A) -> C {
 	return { (a : A) -> C in
 		return f(g(a))
 	}

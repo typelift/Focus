@@ -10,7 +10,7 @@ import Focus
 
 // A user example
 // an example of why we need SYB, Generics or macros
-public class User {
+open class User {
 	let name : String
 	let age : Int
 	let tweets : [String]
@@ -24,7 +24,7 @@ public class User {
 	}
 	
 	// lens example
-	public class func luserName() -> Lens<User, User, String, String> {
+	open class func luserName() -> Lens<User, User, String, String> {
 		return Lens { user in IxStore(user.name) { User($0, user.age, user.tweets, user.attr) } }
 	}
 }

@@ -27,22 +27,22 @@ public struct Iso<S, T, A, B> : IsoType {
 	public typealias AltSource = T
 	public typealias AltTarget = B
 
-	private let _get : S -> A
-	private let _inject : B -> T
+	private let _get : (S) -> A
+	private let _inject : (B) -> T
 
 	/// Builds an `Iso` from a pair of inverse functions.
-	public init(get f : S -> A, inject g : B -> T) {
+	public init(get f : @escaping (S) -> A, inject g : @escaping (B) -> T) {
 		_get = f
 		_inject = g
 	}
 
 	/// Extracts the first function from the isomorphism.
-	public func get(v : S) -> A {
+	public func get(_ v : S) -> A {
 		return _get(v)
 	}
 
 	/// Extracts the second function from the isomorphism.
-	public func inject(x : B) -> T {
+	public func inject(_ x : B) -> T {
 		return _inject(x)
 	}
 }
@@ -54,9 +54,8 @@ public protocol IsoType : OpticFamilyType, LensType, PrismType {
 }
 
 extension Iso {
-	public init<Other : IsoType where
-		S == Other.Source, A == Other.Target, T == Other.AltSource, B == Other.AltTarget>
-		(_ other : Other)
+	public init<Other : IsoType>(_ other : Other) where
+		S == Other.Source, A == Other.Target, T == Other.AltSource, B == Other.AltTarget
 	{
 		self.init(get: other.get, inject: other.inject)
 	}
@@ -68,33 +67,33 @@ public func identity<S, T>() -> Iso<S, T, S, T> {
 }
 
 extension IsoType {
-	public func run(v : Source) -> IxStore<Target, AltTarget, AltSource> {
+	public func run(_ v : Source) -> IxStore<Target, AltTarget, AltSource> {
 		return IxStore<Target, AltTarget, AltSource>(get(v)) { x in
 			return self.inject(x)
 		}
 	}
 
 	/// An `Iso`'s `tryGet` will always succeed.
-	public func tryGet(v : Source) -> Target? {
+	public func tryGet(_ v : Source) -> Target? {
 		return get(v)
 	}
 
 	/// Runs a value of type `S` along both parts of the Iso.
-	public func modify(v : Source, _ f : Target -> AltTarget) -> AltSource {
+	public func modify(v : Source, _ f : (Target) -> AltTarget) -> AltSource {
 		return inject(f(get(v)))
 	}
 
 	/// Composes an `Iso` with the receiver.
-	public func compose<Other : IsoType where
+	public func compose<Other : IsoType>
+		(_ other : Other) -> Iso<Source, AltSource, Other.Target, Other.AltTarget> where
 		Self.Target == Other.Source,
-		Self.AltTarget == Other.AltSource>
-		(other : Other) -> Iso<Source, AltSource, Other.Target, Other.AltTarget>
+		Self.AltTarget == Other.AltSource
 	{
 		return Iso(get: other.get • self.get, inject: self.inject • other.inject)
 	}
 
 	/// Extracts the two functions that characterize the receiving `Iso`.
-	public func withIso<R>(k : ((Source -> Target), (AltTarget -> AltSource)) -> R) -> R {
+	public func withIso<R>(k : (((Source) -> Target), ((AltTarget) -> AltSource)) -> R) -> R {
 		return k(self.get, self.inject)
 	}
 
@@ -109,10 +108,10 @@ extension IsoType {
 }
 
 /// Compose isomorphisms.
-public func • <Left : IsoType, Right : IsoType where
+public func • <Left : IsoType, Right : IsoType>
+	(l : Left, r : Right) -> Iso<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> where
 	Left.Target == Right.Source,
-	Left.AltTarget == Right.AltSource>
-	(l : Left, r : Right) -> Iso<Left.Source, Left.AltSource, Right.Target, Right.AltTarget>
+	Left.AltTarget == Right.AltSource
 {
 	return l.compose(r)
 }
