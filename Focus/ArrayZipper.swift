@@ -8,7 +8,7 @@
 
 /// A zipper for arrays.  Zippers are convenient ways of traversing and modifying a
 /// structure using a cursor to focus on its individual parts.
-public struct ArrayZipper<A> : ArrayLiteralConvertible {
+public struct ArrayZipper<A> : ExpressibleByArrayLiteral {
 	public typealias Element = A
 
 	/// The underlying array of values.
@@ -34,12 +34,12 @@ public struct ArrayZipper<A> : ArrayLiteralConvertible {
 
 	/// Creates an `ArrayZipper` with the cursor adjusted by n in the direction of the sign of the
 	/// given value.
-	public func move(n : Int = 1) -> ArrayZipper<A> {
+	public func move(_ n : Int = 1) -> ArrayZipper<A> {
 		return ArrayZipper(values, position + n)
 	}
 
 	/// Creates an `ArrayZipper` with the cursor set to a given position value.
-	public func moveTo(pos : Int) -> ArrayZipper<A> {
+	public func moveTo(_ pos : Int) -> ArrayZipper<A> {
 		return ArrayZipper(values, pos)
 	}
 
@@ -50,12 +50,12 @@ public struct ArrayZipper<A> : ArrayLiteralConvertible {
 }
 
 extension ArrayZipper /*: Functor*/ {
-	public func fmap<B>(f : A -> B) -> ArrayZipper<B> {
+	public func fmap<B>(_ f : (A) -> B) -> ArrayZipper<B> {
 		return ArrayZipper<B>(self.values.map(f), self.position)
 	}
 }
 
-public func <^> <A, B>(f : A -> B, xz : ArrayZipper<A>) -> ArrayZipper<B> {
+public func <^> <A, B>(f : (A) -> B, xz : ArrayZipper<A>) -> ArrayZipper<B> {
 	return xz.fmap(f)
 }
 
@@ -74,11 +74,11 @@ extension ArrayZipper /*: Comonad*/ {
 		return ArrayZipper<ArrayZipper<A>>((0 ..< self.values.count).map { ArrayZipper(self.values, $0) }, self.position)
 	}
 
-	public func extend<B>(f : ArrayZipper<A> -> B) -> ArrayZipper<B> {
+	public func extend<B>(_ f : (ArrayZipper<A>) -> B) -> ArrayZipper<B> {
 		return ArrayZipper<B>((0 ..< self.values.count).map { f(ArrayZipper(self.values, $0)) }, self.position)
 	}
 }
 
-public func ->> <A, B>(xz : ArrayZipper<A>, f: ArrayZipper<A> -> B) -> ArrayZipper<B> {
+public func ->> <A, B>(xz : ArrayZipper<A>, f: (ArrayZipper<A>) -> B) -> ArrayZipper<B> {
 	return xz.extend(f)
 }

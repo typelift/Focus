@@ -23,34 +23,34 @@ public struct Setter<S, T, A, B> : SetterType {
     public typealias AltSource = T
     public typealias AltTarget = B
 
-    private let _over: (A -> B) -> S -> T
+    private let _over : (@escaping (A) -> B) -> (S) -> T
 
-    public init(over: (A -> B) -> S -> T) {
+    public init(over : @escaping (@escaping (A) -> B) -> (S) -> T) {
         self._over = over
     }
 
-    public func over(f : A -> B) -> S -> T {
+    public func over(_ f : @escaping (A) -> B) -> (S) -> T {
         return _over(f)
     }
 }
 
 public protocol SetterType : OpticFamilyType {
-    func over(f: Target -> AltTarget) -> Source -> AltSource
+    func over(_ f : @escaping (Target) -> AltTarget) -> (Source) -> AltSource
 }
 
 extension SetterType {
     /// Composes a `Setter` with the receiver.
-    public func compose<Other : SetterType where
+    public func compose<Other : SetterType>
+        (_ other : Other) -> Setter<Source, AltSource, Other.Target, Other.AltTarget> where
         Other.Source == Target,
-        Other.AltSource == AltTarget>
-        (other : Other) -> Setter<Source, AltSource, Other.Target, Other.AltTarget> {
-            return Setter { f in self.over(other.over(f)) }
+        Other.AltSource == AltTarget {
+			return Setter { f in self.over(other.over(f)) }
     }
 }
 
-public func • <Left : SetterType, Right : SetterType where
+public func • <Left : SetterType, Right : SetterType>
+    (left : Left, right : Right) -> Setter<Right.Source, Right.AltSource, Left.Target, Left.AltTarget> where
     Left.Source == Right.Target,
-    Left.AltSource == Right.AltTarget>
-    (left : Left, right : Right) -> Setter<Right.Source, Right.AltSource, Left.Target, Left.AltTarget> {
+    Left.AltSource == Right.AltTarget {
         return right.compose(left)
 }

@@ -16,7 +16,7 @@ internal func identity<A>(a : A) -> A {
 ///     f : B -> C
 ///     g : A -> B
 ///     (f • g)(x) === f(g(x)) : A -> B -> C
-internal func • <A, B, C>(f : B -> C, g : A -> B) -> A -> C {
+internal func • <A, B, C>(f : @escaping (B) -> C, g : @escaping (A) -> B) -> (A) -> C {
 	return { (a : A) -> C in
 		return f(g(a))
 	}

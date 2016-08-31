@@ -18,25 +18,25 @@ public struct IxStore<O, I, A> {
 	let pos : O
 
 	/// Retrieves the value at index `I`.
-	let set : I -> A
+	let set : (I) -> A
 
-	public init(_ pos: O, _ set: I -> A) {
+	public init(_ pos: O, _ set: @escaping (I) -> A) {
 		self.pos = pos
 		self.set = set
 	}
 
 	/// Applies a function to the retrieval of values.
-	public func map<B>(f : A -> B) -> IxStore<O, I, B> {
+	public func map<B>(_ f : @escaping (A) -> B) -> IxStore<O, I, B> {
 		return f <^> self
 	}
 
 	/// Applies a function to the position index.
-	public func imap<P>(f : O -> P) -> IxStore<P, I, A> {
+	public func imap<P>(_ f : @escaping (O) -> P) -> IxStore<P, I, A> {
 		return f <^^> self
 	}
 
 	/// Applies a function to the retrieval index.
-	public func contramap<H>(f : H -> I) -> IxStore<O, H, A> {
+	public func contramap<H>(_ f : @escaping (H) -> I) -> IxStore<O, H, A> {
 		return f <!> self
 	}
 
@@ -47,18 +47,18 @@ public struct IxStore<O, I, A> {
 
 	/// Extends the context of the store with a function that retrieves values from another store
 	/// indexed by a different position.
-	public func extend<E, B>(f : IxStore<E, I, A> -> B) -> IxStore<O, E, B> {
+	public func extend<E, B>(_ f : @escaping (IxStore<E, I, A>) -> B) -> IxStore<O, E, B> {
 		return self ->> f
 	}
 
 	/// Extracts a value from the store at a given index.
-	public func peek(x : I) -> A {
+	public func peek(_ x : I) -> A {
 		return set(x)
 	}
 
 	/// Extracts a value from the store at an index given by applying a function to the receiver's
 	/// position index.
-	public func peeks(f : O -> I) -> A {
+	public func peeks(_ f : (O) -> I) -> A {
 		return set(f(pos))
 	}
 
@@ -66,7 +66,7 @@ public struct IxStore<O, I, A> {
 	///
 	/// With a proper Monad Transformer this function would use a Comonadic context to extract a
 	/// value.
-	public func put(x : I) -> A {
+	public func put(_ x : I) -> A {
 		return set(x)
 	}
 
@@ -75,44 +75,44 @@ public struct IxStore<O, I, A> {
 	///
 	/// With a proper Monad Transformer this function would use a Comonadic context to extract a
 	/// value.
-	public func puts(f : O -> I) -> A {
+	public func puts(_ f : (O) -> I) -> A {
 		return set(f(pos))
 	}
 
 	/// Returns a new `IxStore` with its position index set to the given value.
-	public func seek<P>(x : P) -> IxStore<P, I, A> {
+	public func seek<P>(_ x : P) -> IxStore<P, I, A> {
 		return IxStore<P, I, A>(x, set)
 	}
 
 	/// Returns a new `IxStore` with its position index set to the result of applying the given
 	/// function to the current position index.
-	public func seeks<P>(f : O -> P) -> IxStore<P, I, A> {
+	public func seeks<P>(_ f : (O) -> P) -> IxStore<P, I, A> {
 		return IxStore<P, I, A>(f(pos), set)
 	}
 }
 
 /// The trivial `IxStore` always retrieves the same value at all indexes.
-public func trivial<A>(x : A) -> IxStore<A, A, A> {
+public func trivial<A>(_ x : A) -> IxStore<A, A, A> {
 	return IxStore(x, identity)
 }
 
 /// Extracts a value from the receiver at its position index.
-public func extract<I, A>(a : IxStore<I, I, A>) -> A {
+public func extract<I, A>(_ a : IxStore<I, I, A>) -> A {
 	return a.set(a.pos)
 }
 
-public func <^> <O, I, A, B>(f : A -> B, a : IxStore<O, I, A>) -> IxStore<O, I, B> {
+public func <^> <O, I, A, B>(f : @escaping (A) -> B, a : IxStore<O, I, A>) -> IxStore<O, I, B> {
 	return IxStore(a.pos) { f(a.set($0)) }
 }
 
-public func <^^> <O, P, I, A>(f : O -> P, a : IxStore<O, I, A>) -> IxStore<P, I, A> {
+public func <^^> <O, P, I, A>(f : @escaping (O) -> P, a : IxStore<O, I, A>) -> IxStore<P, I, A> {
 	return IxStore(f(a.pos), a.set)
 }
 
-public func <!> <O, H, I, A>(f : H -> I, a : IxStore<O, I, A>) -> IxStore<O, H, A> {
+public func <!> <O, H, I, A>(f : @escaping (H) -> I, a : IxStore<O, I, A>) -> IxStore<O, H, A> {
 	return IxStore(a.pos) { a.set(f($0)) }
 }
 
-public func ->> <O, J, I, A, B>(a : IxStore<O, I, A>, f : IxStore<J, I, A> -> B) -> IxStore<O, J, B> {
+public func ->> <O, J, I, A, B>(a : IxStore<O, I, A>, f : @escaping (IxStore<J, I, A>) -> B) -> IxStore<O, J, B> {
 	return IxStore(a.pos) { f(IxStore($0, a.set)) }
 }
