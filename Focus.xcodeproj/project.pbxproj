@@ -21,7 +21,6 @@
 		8240CE591C3A480E00EF4D29 /* LensOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46471B460C1E009AAF49 /* LensOperators.swift */; };
 		8240CE5A1C3A480E00EF4D29 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
 		8240CE5B1C3A480E00EF4D29 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
-		8240CE5C1C3A480E00EF4D29 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
 		8240CE5D1C3A480F00EF4D29 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46301B460B25009AAF49 /* Lens.swift */; };
 		8240CE5E1C3A480F00EF4D29 /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46311B460B25009AAF49 /* Prism.swift */; };
 		8240CE5F1C3A480F00EF4D29 /* Iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462B1B460B25009AAF49 /* Iso.swift */; };
@@ -33,7 +32,6 @@
 		8240CE651C3A481500EF4D29 /* LensOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46471B460C1E009AAF49 /* LensOperators.swift */; };
 		8240CE661C3A481500EF4D29 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
 		8240CE671C3A481500EF4D29 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D137041B544D0000E76EBA /* Protocols.swift */; };
-		8240CE681C3A481500EF4D29 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
 		8240CE691C3A481500EF4D29 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46301B460B25009AAF49 /* Lens.swift */; };
 		8240CE6A1C3A481500EF4D29 /* Prism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B46311B460B25009AAF49 /* Prism.swift */; };
 		8240CE6B1C3A481500EF4D29 /* Iso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B462B1B460B25009AAF49 /* Iso.swift */; };
@@ -79,8 +77,6 @@
 		82DD8EE81B48DF8700B66551 /* IsoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EE61B48DF8700B66551 /* IsoSpec.swift */; };
 		82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
 		82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD8EFC1B4CE0E600B66551 /* Operators.swift */; };
-		82E93EB11B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
-		82E93EB21B8A7907003D5798 /* Monomorphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E93EB01B8A7907003D5798 /* Monomorphic.swift */; };
 		BCDCF0B51C9CBA1F0082BF07 /* SetterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */; };
 		BCDCF0B71C9CBA6D0082BF07 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */; };
 		BCE500E51C9E2603008573A0 /* SetterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */; };
@@ -218,7 +214,6 @@
 		82DD8EE31B48DDB200B66551 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrismSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82DD8EE61B48DF8700B66551 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsoSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82DD8EFC1B4CE0E600B66551 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
-		82E93EB01B8A7907003D5798 /* Monomorphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monomorphic.swift; sourceTree = "<group>"; usesTabs = 1; };
 		BCDCF0B41C9CBA1F0082BF07 /* SetterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetterSpec.swift; sourceTree = "<group>"; };
 		BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,7 +308,6 @@
 				824B46471B460C1E009AAF49 /* LensOperators.swift */,
 				82DD8EFC1B4CE0E600B66551 /* Operators.swift */,
 				11D137041B544D0000E76EBA /* Protocols.swift */,
-				82E93EB01B8A7907003D5798 /* Monomorphic.swift */,
 				BCDCF0B61C9CBA6D0082BF07 /* Setter.swift */,
 				824B46301B460B25009AAF49 /* Lens.swift */,
 				824B46311B460B25009AAF49 /* Prism.swift */,
@@ -719,7 +713,6 @@
 				8240CE651C3A481500EF4D29 /* LensOperators.swift in Sources */,
 				8240CE661C3A481500EF4D29 /* Operators.swift in Sources */,
 				8240CE671C3A481500EF4D29 /* Protocols.swift in Sources */,
-				8240CE681C3A481500EF4D29 /* Monomorphic.swift in Sources */,
 				8240CE691C3A481500EF4D29 /* Lens.swift in Sources */,
 				8240CE6A1C3A481500EF4D29 /* Prism.swift in Sources */,
 				8240CE6B1C3A481500EF4D29 /* Iso.swift in Sources */,
@@ -739,7 +732,6 @@
 				8240CE591C3A480E00EF4D29 /* LensOperators.swift in Sources */,
 				8240CE5A1C3A480E00EF4D29 /* Operators.swift in Sources */,
 				8240CE5B1C3A480E00EF4D29 /* Protocols.swift in Sources */,
-				8240CE5C1C3A480E00EF4D29 /* Monomorphic.swift in Sources */,
 				8240CE5D1C3A480F00EF4D29 /* Lens.swift in Sources */,
 				8240CE5E1C3A480F00EF4D29 /* Prism.swift in Sources */,
 				8240CE5F1C3A480F00EF4D29 /* Iso.swift in Sources */,
@@ -771,7 +763,6 @@
 				824B46361B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFD1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463E1B460B25009AAF49 /* Prism.swift in Sources */,
-				82E93EB11B8A7907003D5798 /* Monomorphic.swift in Sources */,
 				11D137051B544D0000E76EBA /* Protocols.swift in Sources */,
 				824B46341B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46381B460B25009AAF49 /* IxState.swift in Sources */,
@@ -804,7 +795,6 @@
 				824B46371B460B25009AAF49 /* IxMultiStore.swift in Sources */,
 				82DD8EFE1B4CE0E600B66551 /* Operators.swift in Sources */,
 				824B463F1B460B25009AAF49 /* Prism.swift in Sources */,
-				82E93EB21B8A7907003D5798 /* Monomorphic.swift in Sources */,
 				11D137061B544D0000E76EBA /* Protocols.swift in Sources */,
 				824B46351B460B25009AAF49 /* IxCont.swift in Sources */,
 				824B46391B460B25009AAF49 /* IxState.swift in Sources */,

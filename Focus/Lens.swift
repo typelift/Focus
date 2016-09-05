@@ -14,6 +14,7 @@
 /// In practice, a `Lens` is used with Product structures like tuples, classes, 
 /// and structs. If a less-powerful form of `Lens` is needed, consider using a 
 /// `SimpleLens` instead.
+public typealias SimpleLens<S, A> = Lens<S, S, A, A>
 ///
 /// A Lens, in its simplest form, can also be seen as a pair of functions:
 /// 

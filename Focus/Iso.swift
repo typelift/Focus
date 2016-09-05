@@ -16,6 +16,7 @@
 ///
 /// If a less-powerful form of `Iso` is needed, where `S == T` and `A == B`, consider using a 
 /// `SimpleIso` instead.
+public typealias SimpleIso<S, A> = Iso<S, S, A, A>
 ///
 /// - parameter S: The source of the first function of the isomorphism.
 /// - parameter T: The target of the second function of the isomorphism.
