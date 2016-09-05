@@ -12,6 +12,7 @@
 ///
 /// If a less-powerful form of `Setter` is needed, consider using a
 /// `SimpleSetter` instead.
+public typealias SimpleSetter<S, A> = Setter<S, S, A, A>
 ///
 /// - parameter S: The structure to be modified
 /// - parameter T: The modified form of the structure.

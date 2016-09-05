@@ -21,6 +21,7 @@
 /// In practice, a `Prism` is used with Sum structures like enums. If a less
 /// powerful form of `Prism` is needed, where `S == T` and `A == B`, consider 
 /// using a `SimplePrism` instead.
+public typealias SimplePrism<S, A> = Prism<S, S, A, A>
 ///
 /// A Prism can thought of as an `Iso` characterized by two functions (where one
 /// of the functions is partial):
