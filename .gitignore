@@ -34,6 +34,7 @@ Temporary Items
 
 ## Build generated
 .build/*
+Packages/*
 build/
 DerivedData
 

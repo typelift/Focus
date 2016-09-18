@@ -6,6 +6,10 @@
 //  Copyright © 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// The identity function.
 internal func identity<A>(a : A) -> A {
 	return a

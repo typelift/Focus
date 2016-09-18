@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// A `Prism` describes a way of focusing on potentially more than one target 
 /// structure.  Like an `Iso` a `Prism` is invertible, but unlike an `Iso` 
 /// multi-focus `Prism`s are incompatible with inversion in general.  Because of

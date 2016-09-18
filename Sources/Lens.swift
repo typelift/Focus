@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// A `Lens` (or Functional Reference) describes a way of focusing on the parts 
 /// of a structure, composing with other lenses to focus deeper into a 
 /// structure, and returning new structures with parts modified.  In this way, a

@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// `IxCont` is the Continuation Monad indexed by a result type `R`, an 
 /// immediate output type `O` and a value `A`.
 public struct IxCont<R, O, A> {

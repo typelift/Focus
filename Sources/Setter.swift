@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// A `Setter` describes a way of applying a transformation to a
 /// subpart of a structure. Composed with other optics, they can 
 /// be used to modify multiple parts of a larger structure.

@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// The Store Comonad Transformer indexed by a position type `O` and the 
 /// `ArrayZipper` Comonad.
 public struct IxMultiStore<O, I, A> {

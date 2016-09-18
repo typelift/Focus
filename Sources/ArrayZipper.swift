@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// A zipper for arrays.  Zippers are convenient ways of traversing and modifying a
 /// structure using a cursor to focus on its individual parts.
 public struct ArrayZipper<A> : ExpressibleByArrayLiteral {

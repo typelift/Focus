@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// Captures an isomorphism between S, A and B, T.
 ///
 /// In practice, an `Iso` is used with two structures that can be converted between each other 

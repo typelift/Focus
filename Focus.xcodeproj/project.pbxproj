@@ -207,6 +207,7 @@
 		821BEE891D8F01CF009F8D58 /* Prism.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Prism.swift; path = Sources/Prism.swift; sourceTree = SOURCE_ROOT; };
 		821BEE8A1D8F01CF009F8D58 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Sources/Protocols.swift; sourceTree = SOURCE_ROOT; };
 		821BEE8B1D8F01CF009F8D58 /* Setter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setter.swift; path = Sources/Setter.swift; sourceTree = SOURCE_ROOT; };
+		821BEEC11D8F07C1009F8D58 /* libOperadics.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOperadics.dylib; path = .build/debug/libOperadics.dylib; sourceTree = "<group>"; };
 		8240CE241C3A47A500EF4D29 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240CE391C3A47AC00EF4D29 /* Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240CE421C3A47AC00EF4D29 /* Focus-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Focus-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +278,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		821BEEC01D8F07C1009F8D58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				821BEEC11D8F07C1009F8D58 /* libOperadics.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		824B45EB1B460AC1009AAF49 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +293,7 @@
 				824B45F71B460AC1009AAF49 /* Focus */,
 				824B46031B460AC1009AAF49 /* Tests */,
 				824B45F61B460AC1009AAF49 /* Products */,
+				821BEEC01D8F07C1009F8D58 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -868,6 +878,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-watchOS";
 				PRODUCT_NAME = Focus;
 				SDKROOT = watchos;
@@ -892,6 +903,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-watchOS";
 				PRODUCT_NAME = Focus;
 				SDKROOT = watchos;
@@ -916,6 +928,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOS";
 				PRODUCT_NAME = Focus;
 				SDKROOT = appletvos;
@@ -939,6 +952,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOS";
 				PRODUCT_NAME = Focus;
 				SDKROOT = appletvos;
@@ -961,6 +975,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -975,6 +991,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 				VALIDATE_PRODUCT = YES;
@@ -1087,10 +1105,15 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.Focus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1109,10 +1132,15 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.Focus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1126,6 +1154,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.FocusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1139,6 +1169,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.FocusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1157,10 +1189,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.Focus;
 				PRODUCT_NAME = Focus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1181,10 +1216,13 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.Focus;
 				PRODUCT_NAME = Focus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1203,6 +1241,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TypeLift.Focus-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1220,6 +1260,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TypeLift.Focus-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};

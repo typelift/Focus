@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// An `IxStore` models a store of variables of type `A` each at an index of 
 /// type `I`.  Unlike the Costate Comonad, `IxStore`'s position is indexed by a 
 /// type `O`.
