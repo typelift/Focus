@@ -1,9 +1,9 @@
 //
 //  ArrayZipper.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 8/4/14.
-//  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
+//  Copyright (c) 2014-2016 Maxwell Swadling. All rights reserved.
 //
 
 #if !XCODE_BUILD

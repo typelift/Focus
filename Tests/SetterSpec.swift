@@ -3,7 +3,7 @@
 //  Focus
 //
 //  Created by Ryan Peck on 3/18/16.
-//  Copyright © 2016 TypeLift. All rights reserved.
+//  Copyright © 2016-2016 TypeLift. All rights reserved.
 //
 
 import XCTest

@@ -1,9 +1,9 @@
 //
-//  Operator.swift
+//  LensOperator.swift
 //  Focus
 //
 //  Created by Robert Widmann on 7/2/15.
-//  Copyright © 2015 TypeLift. All rights reserved.
+//  Copyright © 2015-2016 TypeLift. All rights reserved.
 //
 
 #if !XCODE_BUILD

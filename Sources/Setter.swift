@@ -1,9 +1,9 @@
 //
 //  Lens.swift
-//  swiftz
+//  Focus
 //
 //  Created by Ryan Peck on 3/18/16.
-//  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
 
 #if !XCODE_BUILD

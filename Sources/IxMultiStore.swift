@@ -1,9 +1,9 @@
 //
 //  IxMultiStore.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 8/4/14.
-//  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
 
 #if !XCODE_BUILD
