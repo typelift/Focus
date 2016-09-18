@@ -94,7 +94,7 @@ extension IsoType {
 	}
 
 	/// Extracts the two functions that characterize the receiving `Iso`.
-	public func withIso<R>(k : (((Source) -> Target), ((AltTarget) -> AltSource)) -> R) -> R {
+	public func withIso<R>(k : (@escaping ((Source) -> Target), @escaping ((AltTarget) -> AltSource)) -> R) -> R {
 		return k(self.get, self.inject)
 	}
 
