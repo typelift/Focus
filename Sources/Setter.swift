@@ -10,9 +10,9 @@
 	import Operadics
 #endif
 
-/// A `Setter` describes a way of applying a transformation to a
-/// subpart of a structure. Composed with other optics, they can 
-/// be used to modify multiple parts of a larger structure.
+/// A `Setter` describes a way of applying a transformation to a subpart of a 
+/// structure. Composed with other optics, they can be used to modify multiple 
+/// parts of a larger structure.
 ///
 /// If a less-powerful form of `Setter` is needed, consider using a
 /// `SimpleSetter` instead.
@@ -53,9 +53,8 @@ extension SetterType {
     }
 }
 
-public func • <Left : SetterType, Right : SetterType>
-    (left : Left, right : Right) -> Setter<Right.Source, Right.AltSource, Left.Target, Left.AltTarget> where
-    Left.Source == Right.Target,
-    Left.AltSource == Right.AltTarget {
-        return right.compose(left)
+public func • <Left, Right>(left : Left, right : Right) -> Setter<Right.Source, Right.AltSource, Left.Target, Left.AltTarget>
+	where Left : SetterType, Right : SetterType, Left.Source == Right.Target, Left.AltSource == Right.AltTarget
+{
+	return right.compose(left)
 }

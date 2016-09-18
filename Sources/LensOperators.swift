@@ -15,7 +15,8 @@ internal func identity<A>(a : A) -> A {
 	return a
 }
 
-/// Compose | Applies one function to the result of another function to produce a third function.
+/// Compose | Applies one function to the result of another function to produce 
+/// a third function.
 ///
 ///     f : B -> C
 ///     g : A -> B

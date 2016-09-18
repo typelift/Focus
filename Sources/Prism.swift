@@ -103,9 +103,8 @@ extension PrismType {
 	}
 }
 
-public func • <Left : PrismType, Right : PrismType>
-	(l : Left, r : Right) -> Prism<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> where
-	Left.Target == Right.Source,
-	Left.AltTarget == Right.AltSource {
-		return l.compose(r)
+public func • <Left, Right>(l : Left, r : Right) -> Prism<Left.Source, Left.AltSource, Right.Target, Right.AltTarget>
+	where Left : PrismType, Right : PrismType, Left.Target == Right.Source, Left.AltTarget == Right.AltSource
+{
+	return l.compose(r)
 }

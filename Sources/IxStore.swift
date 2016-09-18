@@ -44,13 +44,14 @@ public struct IxStore<O, I, A> {
 		return f <!> self
 	}
 
-	/// Returns an `IxStore` that retrieves an `IxStore` for every index in the receiver.
+	/// Returns an `IxStore` that retrieves an `IxStore` for every index in the
+	/// receiver.
 	public func duplicate<J>() -> IxStore<O, J, IxStore<J, I, A>> {
 		return IxStore<O, J, IxStore<J, I, A>>(pos) { IxStore<J, I, A>($0, self.set) }
 	}
 
-	/// Extends the context of the store with a function that retrieves values from another store
-	/// indexed by a different position.
+	/// Extends the context of the store with a function that retrieves values 
+	/// from another store indexed by a different position.
 	public func extend<E, B>(_ f : @escaping (IxStore<E, I, A>) -> B) -> IxStore<O, E, B> {
 		return self ->> f
 	}
@@ -60,25 +61,25 @@ public struct IxStore<O, I, A> {
 		return set(x)
 	}
 
-	/// Extracts a value from the store at an index given by applying a function to the receiver's
-	/// position index.
+	/// Extracts a value from the store at an index given by applying a function
+	/// to the receiver's position index.
 	public func peeks(_ f : (O) -> I) -> A {
 		return set(f(pos))
 	}
 
 	/// Extracts a value from the store at a given index.
 	///
-	/// With a proper Monad Transformer this function would use a Comonadic context to extract a
-	/// value.
+	/// With a proper Monad Transformer this function would use a Comonadic 
+	/// context to extract a value.
 	public func put(_ x : I) -> A {
 		return set(x)
 	}
 
-	/// Extracts a value from the store at an index given by applying a function to the receiver's
-	/// position index.
+	/// Extracts a value from the store at an index given by applying a function
+	/// to the receiver's position index.
 	///
-	/// With a proper Monad Transformer this function would use a Comonadic context to extract a
-	/// value.
+	/// With a proper Monad Transformer this function would use a Comonadic 
+	/// context to extract a value.
 	public func puts(_ f : (O) -> I) -> A {
 		return set(f(pos))
 	}
@@ -88,8 +89,8 @@ public struct IxStore<O, I, A> {
 		return IxStore<P, I, A>(x, set)
 	}
 
-	/// Returns a new `IxStore` with its position index set to the result of applying the given
-	/// function to the current position index.
+	/// Returns a new `IxStore` with its position index set to the result of 
+	/// applying the given function to the current position index.
 	public func seeks<P>(_ f : (O) -> P) -> IxStore<P, I, A> {
 		return IxStore<P, I, A>(f(pos), set)
 	}
