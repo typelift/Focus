@@ -3,7 +3,7 @@
 //  swiftz
 //
 //  Created by Maxwell Swadling on 9/06/2014.
-//  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
+//  Copyright (c) 2014-2016 Maxwell Swadling. All rights reserved.
 //
 
 import XCTest

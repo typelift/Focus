@@ -1,14 +1,21 @@
 //
 //  ArrayZipper.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 8/4/14.
-//  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
+//  Copyright (c) 2014-2016 Maxwell Swadling. All rights reserved.
 //
 
-/// A zipper for arrays.  Zippers are convenient ways of traversing and modifying a
-/// structure using a cursor to focus on its individual parts.
-public struct ArrayZipper<A> : ArrayLiteralConvertible {
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
+/// An `ArrayZipper` is a structure for walking an array of values and 
+/// manipulating it in constant time.
+/// 
+/// Zippers are convenient ways of traversing and modifying a structure using a 
+/// cursor to focus on its individual parts.
+public struct ArrayZipper<A> : ExpressibleByArrayLiteral {
 	public typealias Element = A
 
 	/// The underlying array of values.
@@ -32,38 +39,39 @@ public struct ArrayZipper<A> : ArrayLiteralConvertible {
 		self.init(elements, 0)
 	}
 
-	/// Creates an `ArrayZipper` with the cursor adjusted by n in the direction of the sign of the
-	/// given value.
-	public func move(n : Int = 1) -> ArrayZipper<A> {
+	/// Creates an `ArrayZipper` with the cursor adjusted by n in the direction 
+	/// of the sign of the given value.
+	public func move(_ n : Int = 1) -> ArrayZipper<A> {
 		return ArrayZipper(values, position + n)
 	}
 
 	/// Creates an `ArrayZipper` with the cursor set to a given position value.
-	public func moveTo(pos : Int) -> ArrayZipper<A> {
+	public func moveTo(_ pos : Int) -> ArrayZipper<A> {
 		return ArrayZipper(values, pos)
 	}
 
-	/// Returns whether the cursor of the receiver is at the end of its underlying Array.
+	/// Returns whether the cursor of the receiver is at the end of its 
+	/// underlying Array.
 	public var isAtEnd : Bool {
 		return position >= (values.count - 1)
 	}
 }
 
 extension ArrayZipper /*: Functor*/ {
-	public func fmap<B>(f : A -> B) -> ArrayZipper<B> {
+	public func map<B>(_ f : (A) -> B) -> ArrayZipper<B> {
 		return ArrayZipper<B>(self.values.map(f), self.position)
 	}
 }
 
-public func <^> <A, B>(f : A -> B, xz : ArrayZipper<A>) -> ArrayZipper<B> {
-	return xz.fmap(f)
+public func <^> <A, B>(f : (A) -> B, xz : ArrayZipper<A>) -> ArrayZipper<B> {
+	return xz.map(f)
 }
 
 extension ArrayZipper /*: Copointed*/ {
 	/// Extracts the value at the position of the receiver's cursor.
 	///
-	/// This function is not total, but makes the guarantee that if `zipper.isAtEnd` returns false,
-	/// it is safe to call.
+	/// This function is not total, but makes the guarantee that if 
+	/// `zipper.isAtEnd` returns false it is safe to call.
 	public func extract() -> A {
 		return self.values[self.position]
 	}
@@ -74,11 +82,11 @@ extension ArrayZipper /*: Comonad*/ {
 		return ArrayZipper<ArrayZipper<A>>((0 ..< self.values.count).map { ArrayZipper(self.values, $0) }, self.position)
 	}
 
-	public func extend<B>(f : ArrayZipper<A> -> B) -> ArrayZipper<B> {
+	public func extend<B>(_ f : (ArrayZipper<A>) -> B) -> ArrayZipper<B> {
 		return ArrayZipper<B>((0 ..< self.values.count).map { f(ArrayZipper(self.values, $0)) }, self.position)
 	}
 }
 
-public func ->> <A, B>(xz : ArrayZipper<A>, f: ArrayZipper<A> -> B) -> ArrayZipper<B> {
+public func ->> <A, B>(xz : ArrayZipper<A>, f: (ArrayZipper<A>) -> B) -> ArrayZipper<B> {
 	return xz.extend(f)
 }
