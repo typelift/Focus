@@ -1,10 +1,14 @@
 //
 //  Prism.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 7/22/14.
-//  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
+
+#if !XCODE_BUILD
+	import Operadics
+#endif
 
 /// A `Prism` describes a way of focusing on potentially more than one target 
 /// structure.  Like an `Iso` a `Prism` is invertible, but unlike an `Iso` 
@@ -99,9 +103,8 @@ extension PrismType {
 	}
 }
 
-public func • <Left : PrismType, Right : PrismType>
-	(l : Left, r : Right) -> Prism<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> where
-	Left.Target == Right.Source,
-	Left.AltTarget == Right.AltSource {
-		return l.compose(r)
+public func • <Left, Right>(l : Left, r : Right) -> Prism<Left.Source, Left.AltSource, Right.Target, Right.AltTarget>
+	where Left : PrismType, Right : PrismType, Left.Target == Right.Source, Left.AltTarget == Right.AltSource
+{
+	return l.compose(r)
 }

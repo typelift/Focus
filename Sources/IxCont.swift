@@ -1,10 +1,14 @@
 //
 //  IxCont.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 6/10/14.
-//  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
+
+#if !XCODE_BUILD
+	import Operadics
+#endif
 
 /// `IxCont` is the Continuation Monad indexed by a result type `R`, an 
 /// immediate output type `O` and a value `A`.
@@ -96,7 +100,12 @@ public func reset<R, O, A>(_ a : IxCont<A, O, O>) -> IxCont<R, R, A> {
 	return pure(run(a))
 }
 
-/// 
+/// `callCC` (call-with-current-continuation) calls its argument function, 
+/// passing it the current continuation. It provides an escape continuation 
+/// mechanism for use with the indexed continuation monad. 
+///
+/// Escape continuations one allow to abort the current computation and return a
+/// value immediately, much like `do-catch` blocks in Swift.
 public func callCC<R, O, A, B>(_ f : @escaping ((A) -> IxCont<O, O, B>) -> IxCont<R, O, A>) -> IxCont<R, O, A> {
 	return IxCont({ k in (f { x in IxCont { _ in k(x) } }).run(k) })
 }

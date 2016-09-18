@@ -1,10 +1,14 @@
 //
 //  IxState.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 6/11/14.
-//  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
+
+#if !XCODE_BUILD
+	import Operadics
+#endif
 
 /// IxState is a State Monad that carries extra type-level state (`I`) through 
 /// its computation.

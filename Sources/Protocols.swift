@@ -3,7 +3,7 @@
 //  Focus
 //
 //  Created by Alexander Ronald Altman on 7/13/15.
-//  Copyright © 2015 TypeLift. All rights reserved.
+//  Copyright © 2015-2016 TypeLift. All rights reserved.
 //
 
 /// The shared supertype of all optics.

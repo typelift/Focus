@@ -1,21 +1,25 @@
 //
 //  Iso.swift
-//  swiftz
+//  Focus
 //
 //  Created by Alexander Ronald Altman on 7/22/14.
-//  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
 
-/// Captures an isomorphism between S, A and B, T.
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
+/// Captures an isomorphism between `S`, `A` and `B`, `T`.
 ///
-/// In practice, an `Iso` is used with two structures that can be converted between each other 
-/// without information loss.  For example, the Isomorphism between `Optional<T>` and 
-/// `ImplicitlyUnwrappedOptional<T>` is expressed as
+/// In practice, an `Iso` is used with two structures that can be converted 
+/// between each other without information loss.  For example, the isomorphism 
+/// between `Optional<T>` and `ImplicitlyUnwrappedOptional<T>` is expressed as
 ///
 ///     Iso<Optional<T>, Optional<U>, ImplicitlyUnwrappedOptional<T>, ImplicitlyUnwrappedOptional<U>>
 ///
-/// If a less-powerful form of `Iso` is needed, where `S == T` and `A == B`, consider using a 
-/// `SimpleIso` instead.
+/// If a less-powerful form of `Iso` is needed, where `S == T` and `A == B`, 
+/// consider using a `SimpleIso` instead.
 public typealias SimpleIso<S, A> = Iso<S, S, A, A>
 ///
 /// - parameter S: The source of the first function of the isomorphism.
@@ -109,10 +113,8 @@ extension IsoType {
 }
 
 /// Compose isomorphisms.
-public func • <Left : IsoType, Right : IsoType>
-	(l : Left, r : Right) -> Iso<Left.Source, Left.AltSource, Right.Target, Right.AltTarget> where
-	Left.Target == Right.Source,
-	Left.AltTarget == Right.AltSource
+public func • <Left, Right>(l : Left, r : Right) -> Iso<Left.Source, Left.AltSource, Right.Target, Right.AltTarget>
+	where Left : IsoType, Right : IsoType, Left.Target == Right.Source, Left.AltTarget == Right.AltSource
 {
 	return l.compose(r)
 }
