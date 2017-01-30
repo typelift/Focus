@@ -188,13 +188,13 @@
 
 /* Begin PBXFileReference section */
 		821BEE661D8F01A1009F8D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
-		821BEE671D8F01B5009F8D58 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IsoSpec.swift; path = Tests/IsoSpec.swift; sourceTree = SOURCE_ROOT; };
-		821BEE681D8F01B5009F8D58 /* LensSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LensSpec.swift; path = Tests/LensSpec.swift; sourceTree = SOURCE_ROOT; };
-		821BEE691D8F01B5009F8D58 /* PartyExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyExample.swift; path = Tests/PartyExample.swift; sourceTree = SOURCE_ROOT; };
-		821BEE6A1D8F01B5009F8D58 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrismSpec.swift; path = Tests/PrismSpec.swift; sourceTree = SOURCE_ROOT; };
-		821BEE6B1D8F01B5009F8D58 /* SetterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetterSpec.swift; path = Tests/SetterSpec.swift; sourceTree = SOURCE_ROOT; };
-		821BEE6C1D8F01B5009F8D58 /* UserExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserExample.swift; path = Tests/UserExample.swift; sourceTree = SOURCE_ROOT; };
-		821BEE7F1D8F01BE009F8D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		821BEE671D8F01B5009F8D58 /* IsoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IsoSpec.swift; path = Tests/FocusTests/IsoSpec.swift; sourceTree = SOURCE_ROOT; };
+		821BEE681D8F01B5009F8D58 /* LensSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LensSpec.swift; path = Tests/FocusTests/LensSpec.swift; sourceTree = SOURCE_ROOT; };
+		821BEE691D8F01B5009F8D58 /* PartyExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyExample.swift; path = Tests/FocusTests/PartyExample.swift; sourceTree = SOURCE_ROOT; };
+		821BEE6A1D8F01B5009F8D58 /* PrismSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrismSpec.swift; path = Tests/FocusTests/PrismSpec.swift; sourceTree = SOURCE_ROOT; };
+		821BEE6B1D8F01B5009F8D58 /* SetterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetterSpec.swift; path = Tests/FocusTests/SetterSpec.swift; sourceTree = SOURCE_ROOT; };
+		821BEE6C1D8F01B5009F8D58 /* UserExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserExample.swift; path = Tests/FocusTests/UserExample.swift; sourceTree = SOURCE_ROOT; };
+		821BEE7F1D8F01BE009F8D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/FocusTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		821BEE801D8F01CF009F8D58 /* ArrayZipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayZipper.swift; path = Sources/ArrayZipper.swift; sourceTree = SOURCE_ROOT; };
 		821BEE811D8F01CF009F8D58 /* Focus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Focus.h; path = Sources/Focus.h; sourceTree = SOURCE_ROOT; };
 		821BEE821D8F01CF009F8D58 /* Iso.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Iso.swift; path = Sources/Iso.swift; sourceTree = SOURCE_ROOT; };
@@ -970,7 +970,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/FocusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -986,7 +986,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/FocusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Focus-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1150,7 +1150,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/FocusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.FocusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1165,7 +1165,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/FocusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TypeLift.FocusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1233,7 +1233,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/FocusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TypeLift.Focus-iOSTests";
@@ -1252,7 +1252,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/FocusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TypeLift.Focus-iOSTests";
