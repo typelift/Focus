@@ -7,6 +7,9 @@
 //
 
 import Focus
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 // A user example
 // an example of why we need SYB, Generics or macros

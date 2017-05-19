@@ -9,6 +9,9 @@
 import XCTest
 import SwiftCheck
 import Focus
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 class LensSpec : XCTestCase {
 	func testLensLaws() {
@@ -40,6 +43,12 @@ class LensSpec : XCTestCase {
 			}
 		}
 	}
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testLensLaws", testLensLaws),
+	])
+	#endif
 }
 
 class SimpleLensSpec : XCTestCase {
@@ -72,16 +81,17 @@ class SimpleLensSpec : XCTestCase {
 			}
 		}
 	}
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testLensLaws", testLensLaws),
+	])
+	#endif
 }
 
 func == <T : Equatable, U : Equatable>(l : (T, U), r : (T, U)) -> Bool {
 	return l.0 == r.0 && l.1 == r.1
 }
-
-func uncurry<A, B, C>(_ f : @escaping (A) -> (B) -> C) -> (A, B) -> C {
-	return { t in f(t.0)(t.1) }
-}
-
 
 func • <A, B, C>(f : @escaping (B) -> C, g: @escaping (A) -> B) -> (A) -> C {
 	return { (a : A) -> C in

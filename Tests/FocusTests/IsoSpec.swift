@@ -9,6 +9,9 @@
 import XCTest
 import SwiftCheck
 import Focus
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 class IsoSpec : XCTestCase {
 	func testIsoLaws() {
@@ -72,6 +75,13 @@ class IsoSpec : XCTestCase {
 			return iso1.inject(iso2.inject(x)) == isoC.inject(x)
 		}
 	}
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testIsoLaws", testIsoLaws),
+		("testIsoInverseLaws", testIsoInverseLaws),
+	])
+	#endif
 }
 
 
@@ -137,4 +147,11 @@ class SimpleIsoSpec : XCTestCase {
 			return iso1.inject(iso2.inject(x)) == isoC.inject(x)
 		}
 	}
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testIsoLaws", testIsoLaws),
+		("testIsoInverseLaws", testIsoInverseLaws),
+	])
+	#endif
 }
