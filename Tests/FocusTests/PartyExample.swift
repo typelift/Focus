@@ -8,6 +8,9 @@
 
 import XCTest
 import Focus
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 // A party has a host, who is a user.
 // A lens example
@@ -41,4 +44,10 @@ class PartySpec : XCTestCase {
 		let updatedParty: Party = (Party.lpartyHost() • User.luserName()).set(party, "Max")
 		XCTAssert(hostnameLens.get(updatedParty) == "Max")
 	}
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testLens", testLens),
+	])
+	#endif
 }

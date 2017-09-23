@@ -6,7 +6,7 @@
 //  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
 
-#if !XCODE_BUILD
+#if SWIFT_PACKAGE
 	import Operadics
 #endif
 
@@ -53,7 +53,7 @@ public struct Iso<S, T, A, B> : IsoType {
 }
 
 /// Captures the essential structure of an `Iso`.
-public protocol IsoType : OpticFamilyType, LensType, PrismType {
+public protocol IsoType : LensType, PrismType {
 	func get(_ : Source) -> Target
 	func inject(_ : AltTarget) -> AltSource
 }

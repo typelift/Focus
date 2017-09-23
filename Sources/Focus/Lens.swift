@@ -6,7 +6,7 @@
 //  Copyright (c) 2015-2016 TypeLift. All rights reserved.
 //
 
-#if !XCODE_BUILD
+#if SWIFT_PACKAGE
 	import Operadics
 #endif
 
@@ -75,6 +75,18 @@ public struct Lens<S, T, A, B> : LensType {
 	}
 }
 
+extension Lens where S == T, A == B {
+  /// Creates a simple lens from a mutating keypath on a reference type.
+  public init(_ kp : ReferenceWritableKeyPath<S, A>) {
+    self.init(get: { s in
+      return s[keyPath: kp]
+    }, set: { (s, v) in
+      s[keyPath: kp] = v
+      return s
+    })
+  }
+}
+
 /// Captures the essential structure of a Lens.
 public protocol LensType : OpticFamilyType {
 	/// Gets the Indexed Costate Comonad Coalgebroid underlying the receiver.
@@ -138,10 +150,11 @@ extension LensType {
 		(Source, Other.Source), (AltSource, Other.AltSource),
 		(Target, Other.Target), (AltTarget, Other.AltTarget)>
 	{
-		return Lens { (vl, vr) in
+		return Lens { t in
+      let (vl, vr) = t
 			let q1 = self.run(vl)
 			let q2 = right.run(vr)
-			return IxStore((q1.pos, q2.pos)) { (l, r) in (q1.peek(l), q2.peek(r)) }
+			return IxStore((q1.pos, q2.pos)) { t in (q1.peek(t.0), q2.peek(t.1)) }
 		}
 	}
 

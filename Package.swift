@@ -1,15 +1,25 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
 	name: "Focus",
-	targets: [
-		Target(
-			name: "Focus"),
-		],
+	products: [
+		.library(
+			name: "Focus",
+			targets: ["Focus"]),
+	],
 	dependencies: [
-		.Package(url: "https://github.com/typelift/Operadics.git", versions: Version(0,2,2)...Version(0,2,2))
+		.package(url: "https://github.com/typelift/SwiftCheck.git", .branch("master")),
+		.package(url: "https://github.com/typelift/Operadics.git", .branch("master")),
+	],
+	targets: [
+		.target(
+			name: "Focus",
+			dependencies: ["Operadics"]),
+		.testTarget(
+			name: "FocusTests",
+			dependencies: ["Focus", "Operadics", "SwiftCheck"]),
 	]
 )
 
-let libFocus = Product(name: "Focus", type: .Library(.Dynamic), modules: "Focus")
-products.append(libFocus)

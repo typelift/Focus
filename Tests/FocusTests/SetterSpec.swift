@@ -9,6 +9,9 @@
 import XCTest
 import SwiftCheck
 import Focus
+#if SWIFT_PACKAGE
+	import Operadics
+#endif
 
 class SetterSpec : XCTestCase {
     func testSetterLaws() {
@@ -32,6 +35,12 @@ class SetterSpec : XCTestCase {
             }
         }
     }
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testSetterLaws", testSetterLaws),
+	])
+	#endif
 }
 
 class SimpleSetterSpec : XCTestCase {
@@ -56,4 +65,10 @@ class SimpleSetterSpec : XCTestCase {
             }
         }
     }
+
+	#if !os(macOS) && !os(iOS) && !os(tvOS)
+	static var allTests = testCase([
+		("testSetterLaws", testSetterLaws),
+	])
+	#endif
 }
